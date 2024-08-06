@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - LevelBounds
-  - Music
-  - Background
+  - FX
+  - Enemy
+  - World
   - NoMask
   layers:
   - Default
@@ -17,52 +18,46 @@ TagManager:
   - UI
   - 
   - 
-  - Platforms
+  - Obstacles
+  - Ground
   - Player
-  - Volumes
-  - OneWayPlatforms
-  - Projectiles
+  - ObstaclesDoors
+  - NoPathfinding
   - Enemies
+  - NoCollisions
+  - Hole
+  - MovingPlatform
+  - FallingPlatform
+  - Projectile
+  - Camera1
+  - Camera2
+  - Camera3
+  - Camera4
   - 
-  - Ladders
-  - PlayerProjectiles
-  - MovingObjects
-  - MovingPlatforms
-  - Foreground
-  - MovingOneWayPlatforms
-  - NoCollision
-  - Background
-  - Friendlies
-  - Invulnerable
-  - PlatformsPlayerOnly
-  - MidHeightOneWayPlatforms
-  - Pushables
-  - Stairs
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 2674791413
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Between
-    uniqueID: 606350985
+  - name: Background
+    uniqueID: 1798043625
     locked: 0
-  - name: Player
-    uniqueID: 2666359821
-    locked: 0
-  - name: Platforms
-    uniqueID: 600026165
+  - name: Ground
+    uniqueID: 2296623839
     locked: 0
   - name: Foreground
-    uniqueID: 1795597123
+    uniqueID: 1603220759
     locked: 0
-  - name: VisibleParticles
-    uniqueID: 940224915
+  - name: Characters
+    uniqueID: 47421343
     locked: 0
-  - name: UI
-    uniqueID: 3241408355
+  - name: Above
+    uniqueID: 961700441
     locked: 0

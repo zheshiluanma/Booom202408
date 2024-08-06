@@ -14,7 +14,7 @@ QualitySettings:
     shadowProjection: 1
     shadowCascades: 1
     shadowDistance: 15
-    shadowNearPlaneOffset: 2
+    shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 0
@@ -40,7 +40,6 @@ QualitySettings:
     asyncUploadBufferSize: 4
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Fast
@@ -50,7 +49,7 @@ QualitySettings:
     shadowProjection: 1
     shadowCascades: 1
     shadowDistance: 20
-    shadowNearPlaneOffset: 2
+    shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 0
@@ -76,7 +75,6 @@ QualitySettings:
     asyncUploadBufferSize: 4
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Simple
@@ -86,7 +84,7 @@ QualitySettings:
     shadowProjection: 1
     shadowCascades: 1
     shadowDistance: 20
-    shadowNearPlaneOffset: 2
+    shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 0
@@ -112,7 +110,6 @@ QualitySettings:
     asyncUploadBufferSize: 4
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Good
@@ -122,7 +119,7 @@ QualitySettings:
     shadowProjection: 1
     shadowCascades: 2
     shadowDistance: 40
-    shadowNearPlaneOffset: 2
+    shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 1
@@ -148,7 +145,6 @@ QualitySettings:
     asyncUploadBufferSize: 4
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Beautiful
@@ -158,7 +154,7 @@ QualitySettings:
     shadowProjection: 1
     shadowCascades: 2
     shadowDistance: 70
-    shadowNearPlaneOffset: 2
+    shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 1
@@ -184,25 +180,24 @@ QualitySettings:
     asyncUploadBufferSize: 4
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Fantastic
-    pixelLightCount: 4
+    pixelLightCount: 20
     shadows: 2
-    shadowResolution: 2
-    shadowProjection: 1
-    shadowCascades: 4
-    shadowDistance: 150
-    shadowNearPlaneOffset: 2
+    shadowResolution: 3
+    shadowProjection: 0
+    shadowCascades: 1
+    shadowDistance: 50
+    shadowNearPlaneOffset: 1
     shadowCascade2Split: 0.33333334
-    shadowCascade4Split: {x: 0.06666667, y: 0.19999999, z: 0.46666664}
+    shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
     shadowmaskMode: 1
     skinWeights: 4
     textureQuality: 0
-    anisotropicTextures: 1
+    anisotropicTextures: 2
     antiAliasing: 4
-    softParticles: 1
+    softParticles: 0
     softVegetation: 1
     realtimeReflectionProbes: 1
     billboardsFaceCameraPosition: 1
@@ -220,10 +215,9 @@ QualitySettings:
     asyncUploadBufferSize: 4
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
     Android: 0
-    Standalone: 0
-    WebGL: 0
-    iPhone: 0
+    Standalone: 5
+    WebGL: 5
+    iPhone: 1
