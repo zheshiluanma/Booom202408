@@ -13,6 +13,7 @@ namespace Scene.Start
         // public Button newGameBtn;
         // public Button exitGameBtn;
         // public bool refreshData;
+        public string sceneName;
         void Start()
         {
             DataMgr.Instance.LoadData(LoadProgress);
@@ -23,7 +24,7 @@ namespace Scene.Start
         {
             if (progress > 0.95f)
             {
-                EnterGame("Level0");
+                EnterGame(sceneName);
             }
         }
 

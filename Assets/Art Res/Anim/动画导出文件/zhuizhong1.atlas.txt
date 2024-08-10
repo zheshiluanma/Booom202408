@@ -1,0 +1,16 @@
+zhuizhong1.png
+size:2048,2048
+filter:Linear,Linear
+pma:true
+BODY
+bounds:691,1106,283,409
+offsets:14,18,310,442
+HTOU
+bounds:8,847,675,668
+offsets:14,14,701,692
+ST
+bounds:8,8,269,343
+offsets:11,12,294,366
+T
+bounds:8,359,347,480
+offsets:12,14,372,506
