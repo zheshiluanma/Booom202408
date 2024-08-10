@@ -1,8 +1,258 @@
 [
   {
     "id": 10001,
+    "Name": "chara",
+    "Type": 4,
+    "Hp": 100,
+    "Dfs": 0,
+    "Atk": 65,
+    "Mov": 1,
+    "Exp": 0
+  },
+  {
+    "id": 10002,
+    "Name": "zhuizhong1",
+    "Type": 0,
+    "Hp": 45,
+    "Dfs": 50,
+    "Atk": 15,
+    "Mov": 0.9,
+    "Exp": 1
+  },
+  {
+    "id": 10003,
+    "Name": "genzong2",
+    "Type": 0,
+    "Hp": 50,
+    "Dfs": 50,
+    "Atk": 20,
+    "Mov": 0.9,
+    "Exp": 1
+  },
+  {
+    "id": 10004,
+    "Name": "yuanjuli",
+    "Type": 0,
+    "Hp": 40,
+    "Dfs": 50,
+    "Atk": 15,
+    "Mov": 1,
+    "Exp": 1
+  },
+  {
+    "id": 10005,
+    "Name": "zhuizhong1",
+    "Type": 0,
+    "Hp": 60,
+    "Dfs": 50,
+    "Atk": 18,
+    "Mov": 0.9,
+    "Exp": 0
+  },
+  {
+    "id": 10006,
+    "Name": "genzong2",
+    "Type": 0,
+    "Hp": 65,
+    "Dfs": 50,
+    "Atk": 23,
+    "Mov": 0.9,
+    "Exp": 0
+  },
+  {
+    "id": 10007,
+    "Name": "yuanjuli",
+    "Type": 0,
+    "Hp": 55,
+    "Dfs": 50,
+    "Atk": 18,
+    "Mov": 1,
+    "Exp": 0
+  },
+  {
+    "id": 10008,
+    "Name": "weirao",
+    "Type": 1,
+    "Hp": 120,
+    "Dfs": 50,
+    "Atk": 12,
+    "Mov": 0.8,
+    "Exp": 0
+  },
+  {
+    "id": 10009,
     "Name": "",
     "Type": 0,
+    "Hp": 0,
+    "Dfs": 50,
+    "Atk": 0,
+    "Mov": 0,
+    "Exp": 0
+  },
+  {
+    "id": 10010,
+    "Name": "zhuizhong1",
+    "Type": 0,
+    "Hp": 75,
+    "Dfs": 50,
+    "Atk": 20,
+    "Mov": 0.9,
+    "Exp": 0
+  },
+  {
+    "id": 10011,
+    "Name": "genzong2",
+    "Type": 0,
+    "Hp": 80,
+    "Dfs": 50,
+    "Atk": 25,
+    "Mov": 0.9,
+    "Exp": 0
+  },
+  {
+    "id": 10012,
+    "Name": "yuanjuli",
+    "Type": 0,
+    "Hp": 70,
+    "Dfs": 50,
+    "Atk": 20,
+    "Mov": 1,
+    "Exp": 0
+  },
+  {
+    "id": 10013,
+    "Name": "",
+    "Type": 0,
+    "Hp": 0,
+    "Dfs": 50,
+    "Atk": 0,
+    "Mov": 0,
+    "Exp": 0
+  },
+  {
+    "id": 10014,
+    "Name": "weirao",
+    "Type": 1,
+    "Hp": 135,
+    "Dfs": 50,
+    "Atk": 15,
+    "Mov": 0.8,
+    "Exp": 0
+  },
+  {
+    "id": 10015,
+    "Name": "zhuizhong1",
+    "Type": 0,
+    "Hp": 80,
+    "Dfs": 50,
+    "Atk": 25,
+    "Mov": 0.9,
+    "Exp": 0
+  },
+  {
+    "id": 10016,
+    "Name": "genzong2",
+    "Type": 0,
+    "Hp": 85,
+    "Dfs": 50,
+    "Atk": 30,
+    "Mov": 0.9,
+    "Exp": 0
+  },
+  {
+    "id": 10017,
+    "Name": "yuanjuli",
+    "Type": 0,
+    "Hp": 75,
+    "Dfs": 50,
+    "Atk": 25,
+    "Mov": 1,
+    "Exp": 0
+  },
+  {
+    "id": 10018,
+    "Name": "",
+    "Type": 0,
+    "Hp": 0,
+    "Dfs": 50,
+    "Atk": 0,
+    "Mov": 0,
+    "Exp": 0
+  },
+  {
+    "id": 10019,
+    "Name": "weirao",
+    "Type": 1,
+    "Hp": 140,
+    "Dfs": 50,
+    "Atk": 20,
+    "Mov": 0.8,
+    "Exp": 0
+  },
+  {
+    "id": 10020,
+    "Name": "zhuizhong1",
+    "Type": 0,
+    "Hp": 80,
+    "Dfs": 50,
+    "Atk": 28,
+    "Mov": 0.9,
+    "Exp": 0
+  },
+  {
+    "id": 10021,
+    "Name": "genzong2",
+    "Type": 0,
+    "Hp": 85,
+    "Dfs": 51,
+    "Atk": 33,
+    "Mov": 0.9,
+    "Exp": 0
+  },
+  {
+    "id": 10022,
+    "Name": "yuanjuli",
+    "Type": 0,
+    "Hp": 75,
+    "Dfs": 52,
+    "Atk": 28,
+    "Mov": 1,
+    "Exp": 0
+  },
+  {
+    "id": 10023,
+    "Name": "",
+    "Type": 0,
+    "Hp": 0,
+    "Dfs": 53,
+    "Atk": 0,
+    "Mov": 0,
+    "Exp": 0
+  },
+  {
+    "id": 10024,
+    "Name": "weirao",
+    "Type": 1,
+    "Hp": 140,
+    "Dfs": 54,
+    "Atk": 25,
+    "Mov": 0.8,
+    "Exp": 0
+  },
+  {
+    "id": 10025,
+    "Name": "Building",
+    "Type": 3,
+    "Hp": 15,
+    "Dfs": 0,
+    "Atk": 0,
+    "Mov": 0,
+    "Exp": 0
+  },
+  {
+    "id": 10026,
+    "Name": "Monster",
+    "Type": 2,
     "Hp": 0,
     "Dfs": 0,
     "Atk": 0,
