@@ -1,0 +1,13 @@
+<module name="">
+    <module name="Active">
+        <enum name="ActiveType">
+            <var name="怪物" alias="Monster" value="0"/>
+            <var name="精英怪物" alias="EliteMonster" value="1"/>
+            <var name="头目" alias="Boss" value="2"/>
+            <var name="建筑" alias="Building" value="3"/>
+            <var name="英雄" alias="Hero" value="4"/>
+        </enum>
+        
+        <table name="ActiveDataSet" value="ActiveData" define_from_file="true" group="e,c,s" input="Datas/ActiveDataSet.xlsx"/>
+    </module>
+</module>
