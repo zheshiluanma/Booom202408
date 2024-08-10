@@ -1,3 +1,5 @@
+using System.Collections;
+using Spine.Unity;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -12,7 +14,19 @@ namespace Manager
         private bool _isFacingRight = true;
         public Transform gunTrs;
         public Rigidbody2D rb;
+        public SkeletonAnimation skeletonAnimation;
+        private bool _canShot=true;
 
+        Coroutine _coolDownShot;
+        private IEnumerator CoolDownShot()
+        {
+            yield return new WaitForSeconds(fireRate);
+            _canShot = true;
+            if (skeletonAnimation.AnimationName=="z_atk")
+            {
+                skeletonAnimation.AnimationName = "z_idle";
+            }
+        }
         void Update()
         {
             // Handle movement
@@ -29,28 +43,39 @@ namespace Manager
             var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
             // Rotate gunTrs towards mouse position
-            gunTrs.rotation = Quaternion.Euler(0, 0, angle);
+            //gunTrs.rotation = Quaternion.Euler(0, 0, angle);
             
             // Rotate character based on movement direction
+            if (moveHorizontal != 0 || moveVertical != 0)
+            {
+                skeletonAnimation.AnimationName = "z_run";
+            }
+            else if(skeletonAnimation.AnimationName != "z_atk")
+            {
+                skeletonAnimation.AnimationName = "z_idle";
+            }
             if (moveHorizontal > 0)
             {
-                transform.rotation = Quaternion.Euler(0, 180, 0); // Face right
-                _isFacingRight = true;
+                // transform.rotation = Quaternion.Euler(0, 180, 0); // Face right
+                // _isFacingRight = true;
             }
             else if (moveHorizontal < 0)
             {
-                transform.rotation = Quaternion.Euler(0, 0, 0); // Face left
-                _isFacingRight = false;
+                // transform.rotation = Quaternion.Euler(0, 0, 0); // Face left
+                // _isFacingRight = false;
             }
 
-            var movement = new Vector3(moveHorizontal, moveVertical, 0);
-            rb.velocity=(movement * movementSpeed );
+            // var movement = new Vector3(moveHorizontal, moveVertical, 0);
+            // rb.velocity=(movement * movementSpeed );
 
             // Handle shooting
-            if (Input.GetMouseButtonDown(0) && Time.time > _nextFire)
+            if (Input.GetMouseButtonDown(0) && _canShot)
             {
-                _nextFire = Time.time + fireRate;
-                Instantiate(bulletPrefab, gunTrs.position, gunTrs.rotation);
+                Debug.Log("Fire");
+                _canShot = false;
+                //Instantiate(bulletPrefab, gunTrs.position, gunTrs.rotation);
+                skeletonAnimation.AnimationName = "z_atk";
+                _coolDownShot=StartCoroutine(CoolDownShot());
             }
         }
     }
