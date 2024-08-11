@@ -10374,8 +10374,8 @@ MonoBehaviour:
   Model: {fileID: 0}
   CurrentHealth: 0
   Invulnerable: 0
-  InitialHealth: 30
-  MaximumHealth: 30
+  InitialHealth: 3000
+  MaximumHealth: 3000
   ResetHealthOnEnable: 1
   ImmuneToDamage: 0
   DamageMMFeedbacks: {fileID: 5423255612875023378}
@@ -10404,6 +10404,9 @@ MonoBehaviour:
   TargetDamageResistanceProcessor: {fileID: 0}
   TargetAnimator: {fileID: 0}
   DisableAnimatorLogs: 1
+  onKill:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &114499223069276626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15666,6 +15669,9 @@ MonoBehaviour:
   gunTrs: {fileID: 3473038572923177507}
   rb: {fileID: 0}
   skeletonAnimation: {fileID: 1754916408079808352}
+  waitAtkAnimTime: 0.15
+  attachmentThreshold: 0.8
+  mixDuration: 0.5
 --- !u!1 &1600486436912884018
 GameObject:
   m_ObjectHideFlags: 0

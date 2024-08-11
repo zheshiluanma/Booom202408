@@ -15,12 +15,17 @@ namespace Manager
         public Vector3 noisePos;
         public GameObject player;
         public PlayerCtrl playerCtrl;
+        public bool getKey;
+        public int remainMonster;
+        public float charge;
+        public int fixLight;
         public void Awake()
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-         public void LoadData(Action<float> loadProgressCallBack=null)
+        
+        public void LoadData(Action<float> loadProgressCallBack=null)
         {
             Addressables.LoadAssetsAsync("ActiveDataSet", delegate(TextAsset asset)
             {
@@ -30,13 +35,14 @@ namespace Manager
             });
         }
          
-         static JSONNode LoadJson(string data)
-         {
-             return JSON.Parse(data);
-         }
-         public int GetShotDamage()
-         {
-             return 10;
-         }
+        static JSONNode LoadJson(string data)
+        {
+            return JSON.Parse(data);
+        }
+        
+        public int GetShotDamage()
+        {
+            return 10;
+        }
     }
 }

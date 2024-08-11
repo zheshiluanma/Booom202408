@@ -83,7 +83,6 @@ namespace Manager
             // Handle shooting
             if (Input.GetMouseButtonDown(0) && _canShot)
             {
-                Debug.Log("Fire");
                 _canShot = false;
                 ShotAnim();
                 _coolDownShot=StartCoroutine(CoolDownShot());
