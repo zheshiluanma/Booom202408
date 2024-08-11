@@ -1,5 +1,6 @@
 using System;
 using Cfg.Data.Active;
+using MoreMountains.TopDownEngine;
 using SimpleJSON;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -12,6 +13,8 @@ namespace Manager
         public ActiveDataSet ActiveDataSet;
         public float loadProgress;
         public Vector3 noisePos;
+        public GameObject player;
+        public PlayerCtrl playerCtrl;
         public void Awake()
         {
             Instance = this;
@@ -30,6 +33,10 @@ namespace Manager
          static JSONNode LoadJson(string data)
          {
              return JSON.Parse(data);
+         }
+         public int GetShotDamage()
+         {
+             return 10;
          }
     }
 }

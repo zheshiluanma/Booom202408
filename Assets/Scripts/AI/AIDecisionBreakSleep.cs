@@ -14,7 +14,7 @@ namespace AI
 
         private float CheckDistance()
         {
-            Debug.Log(Vector3.Distance(DataMgr.Instance.noisePos, _brain.gameObject.transform.position));
+            //Debug.Log(Vector3.Distance(DataMgr.Instance.noisePos, _brain.gameObject.transform.position));
             return Vector3.Distance(DataMgr.Instance.noisePos, _brain.gameObject.transform.position);
         }
     }

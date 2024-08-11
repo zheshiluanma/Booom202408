@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Spine.Unity;
 using UnityEngine;
@@ -16,8 +17,19 @@ namespace Manager
         public Rigidbody2D rb;
         public SkeletonAnimation skeletonAnimation;
         private bool _canShot=true;
+        public float waitAtkAnimTime = 0.15f;
 
+        public float attachmentThreshold = 0.5f;
+        public float mixDuration=0.15f;
+        
         Coroutine _coolDownShot;
+
+        private void Start()
+        {
+            DataMgr.Instance.player = transform.parent.parent.gameObject;
+            DataMgr.Instance.playerCtrl = this;
+        }
+
         private IEnumerator CoolDownShot()
         {
             yield return new WaitForSeconds(fireRate);
@@ -44,13 +56,13 @@ namespace Manager
 
             // Rotate gunTrs towards mouse position
             //gunTrs.rotation = Quaternion.Euler(0, 0, angle);
-            Debug.Log(moveVertical);
+            //Debug.Log(moveVertical);
             // Rotate character based on movement direction
             if (moveHorizontal != 0 || moveVertical != 0)
             {
                 skeletonAnimation.AnimationName = "z_run";
             }
-            else if(skeletonAnimation.AnimationName != "z_atk")
+            else 
             {
                 skeletonAnimation.AnimationName = "z_idle";
             }
@@ -73,9 +85,9 @@ namespace Manager
             {
                 Debug.Log("Fire");
                 _canShot = false;
-                //Instantiate(bulletPrefab, gunTrs.position, gunTrs.rotation);
-                skeletonAnimation.AnimationName = "z_atk";
+                ShotAnim();
                 _coolDownShot=StartCoroutine(CoolDownShot());
+                Invoke(nameof(Shot), waitAtkAnimTime);
             }
 
             if (skeletonAnimation.AnimationName != "z_idle")
@@ -83,5 +95,22 @@ namespace Manager
                 DataMgr.Instance.noisePos = transform.position;
             }
         }
+
+        void ShotAnim()
+        {
+            var track =skeletonAnimation.AnimationState.SetAnimation(1, "z_atk", false);
+            track.AttachmentThreshold = attachmentThreshold;
+            track.MixDuration = mixDuration;
+            var empty = skeletonAnimation.state.AddEmptyAnimation(1, mixDuration, 0.15f);
+            empty.AttachmentThreshold = attachmentThreshold;
+        }
+        
+        void Shot()
+        {
+            var bullet= Instantiate(bulletPrefab);
+            bullet.transform.position = gunTrs.position;
+            bullet.transform.rotation = gunTrs.rotation;
+        }
+        
     }
 }

@@ -15553,7 +15553,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.533, z: 0}
   m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 3473038572923177507}
   m_Father: {fileID: 4330552656303096}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &4568989296724408853
@@ -15659,9 +15660,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 7421527711887528681, guid: 8a1ccc7a47a276745a89e74f47f6104d,
+    type: 3}
   fireRate: 0.5
-  gunTrs: {fileID: 0}
+  gunTrs: {fileID: 3473038572923177507}
   rb: {fileID: 0}
   skeletonAnimation: {fileID: 1754916408079808352}
 --- !u!1 &1600486436912884018
@@ -18064,6 +18066,37 @@ MonoBehaviour:
           m_ColorSpace: -1
           m_NumColorKeys: 2
           m_NumAlphaKeys: 2
+--- !u!1 &7162272697429937057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3473038572923177507}
+  m_Layer: 0
+  m_Name: GunTrs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3473038572923177507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7162272697429937057}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.0833335, y: 8.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 574563648920023995}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7972998509315848447
 GameObject:
   m_ObjectHideFlags: 0
