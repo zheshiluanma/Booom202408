@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: MonsterTide
+  m_EditorClassIdentifier: 
+  m_GroupName: MonsterTide
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 305d1816bd663ad4da2a727508d0c9df
+  m_SerializeEntries:
+  - m_GUID: a014909d3f73493479a2f21da4ee0fbe
+    m_Address: genzong2_MT
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 4d11db203993f6c47aecc3c9c5d07f0b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a4b2cfdf0559dfd459c50345f6607b70, type: 2}
+    - {fileID: 11400000, guid: 696c18954d7500e48948861459292c9e, type: 2}
