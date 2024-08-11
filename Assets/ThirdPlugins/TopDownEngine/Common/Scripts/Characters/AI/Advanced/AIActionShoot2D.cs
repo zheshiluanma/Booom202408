@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Tools;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace MoreMountains.TopDownEngine
 {
@@ -42,6 +44,7 @@ namespace MoreMountains.TopDownEngine
 		protected Vector3 _weaponAimDirection;
 		protected int _numberOfShoots = 0;
 		protected bool _shooting = false;
+		public UnityEvent onShoot;
 
 		/// <summary>
 		/// On init we grab our CharacterHandleWeapon ability
@@ -177,6 +180,7 @@ namespace MoreMountains.TopDownEngine
 			{
 				TargetHandleWeaponAbility.ShootStart();
 				_numberOfShoots++;
+				onShoot?.Invoke();
 			}
 		}
 

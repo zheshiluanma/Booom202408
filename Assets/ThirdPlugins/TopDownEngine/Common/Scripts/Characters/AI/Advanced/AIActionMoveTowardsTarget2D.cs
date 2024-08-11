@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Tools;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 namespace MoreMountains.TopDownEngine
@@ -23,6 +24,7 @@ namespace MoreMountains.TopDownEngine
 		protected Vector2 _direction;
 		protected CharacterMovement _characterMovement;
 		protected int _numberOfJumps = 0;
+		public UnityEvent onMove;
 
 		/// <summary>
 		/// On init we grab our CharacterMovement ability
@@ -51,7 +53,7 @@ namespace MoreMountains.TopDownEngine
 			{
 				return;
 			}
-
+			onMove?.Invoke();
 			if (UseMinimumXDistance)
 			{
 				if (this.transform.position.x < _brain.Target.position.x)

@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Cfg.Data.Active;
 using SimpleJSON;
 using UnityEngine;
@@ -12,6 +11,7 @@ namespace Manager
         public static DataMgr Instance;
         public ActiveDataSet ActiveDataSet;
         public float loadProgress;
+        public Vector3 noisePos;
         public void Awake()
         {
             Instance = this;

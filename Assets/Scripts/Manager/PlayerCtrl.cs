@@ -44,7 +44,7 @@ namespace Manager
 
             // Rotate gunTrs towards mouse position
             //gunTrs.rotation = Quaternion.Euler(0, 0, angle);
-            
+            Debug.Log(moveVertical);
             // Rotate character based on movement direction
             if (moveHorizontal != 0 || moveVertical != 0)
             {
@@ -76,6 +76,11 @@ namespace Manager
                 //Instantiate(bulletPrefab, gunTrs.position, gunTrs.rotation);
                 skeletonAnimation.AnimationName = "z_atk";
                 _coolDownShot=StartCoroutine(CoolDownShot());
+            }
+
+            if (skeletonAnimation.AnimationName != "z_idle")
+            {
+                DataMgr.Instance.noisePos = transform.position;
             }
         }
     }
