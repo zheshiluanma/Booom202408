@@ -16025,7 +16025,6 @@ GameObject:
   - component: {fileID: 31961383091540011}
   - component: {fileID: 1754916408079808352}
   - component: {fileID: 7693568092719097962}
-  - component: {fileID: 6268322874655168257}
   - component: {fileID: 4827457645568441664}
   m_Layer: 0
   m_Name: Spine GameObject (player)
@@ -16163,32 +16162,6 @@ MonoBehaviour:
   attachmentThreshold: 0.8
   mixDuration: 0.5
   ikConstraint: {fileID: 489317061003119712}
---- !u!114 &6268322874655168257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419721881292083487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f21c9538588898a45a3da22bf4779ab3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rootMotionBoneName: root
-  transformPositionX: 1
-  transformPositionY: 1
-  transformRotation: 0
-  rootMotionScaleX: 1
-  rootMotionScaleY: 1
-  rootMotionScaleRotation: 1
-  rootMotionTranslateXPerY: 0
-  rootMotionTranslateYPerX: 0
-  rigidBody2D: {fileID: 50050392041868628}
-  applyRigidbody2DGravity: 0
-  rigidBody: {fileID: 0}
-  disableOnOverride: 1
-  animationTrackFlags: -1
 --- !u!114 &4827457645568441664
 MonoBehaviour:
   m_ObjectHideFlags: 0
