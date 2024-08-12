@@ -11,7 +11,9 @@ public class GetMonsterActiveData : MonoBehaviour
     public ActiveData MonsterData;
     private void Awake()
     {
-        var data = DataMgr.Instance.GetEnemyData(gameObject.name);
+        var id=gameObject.name.Replace("Variant","");
+        Debug.Log(id);
+        var data = DataMgr.Instance.GetEnemyData(id);
         MonsterData = data;
         var health = GetComponent<Health>();
         health.MaximumHealth = data.Hp;

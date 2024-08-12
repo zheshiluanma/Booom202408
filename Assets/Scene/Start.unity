@@ -517,6 +517,7 @@ MonoBehaviour:
   remainMonster: 0
   charge: 0
   fixLight: 0
+  nowLevel: 4
 --- !u!1 &1943416573
 GameObject:
   m_ObjectHideFlags: 0
