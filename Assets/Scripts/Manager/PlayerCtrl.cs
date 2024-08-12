@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Spine;
 using Spine.Unity;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -21,13 +22,23 @@ namespace Manager
 
         public float attachmentThreshold = 0.5f;
         public float mixDuration=0.15f;
-        
+        public GameObject ikConstraint;
         Coroutine _coolDownShot;
 
         private void Start()
         {
             DataMgr.Instance.player = transform.parent.parent.gameObject;
             DataMgr.Instance.playerCtrl = this;
+            //ikConstraint= GetComponent<SkeletonAnimation>().skeleton.FindIkConstraint("Z_GUN");
+            // 获取所有的IK约束
+            var ikConstraints = skeletonAnimation.Skeleton.IkConstraints;
+
+            // 遍历所有的IK约束
+            foreach (var ikConstraint in ikConstraints)
+            {
+                // 打印IK约束的名称
+                Debug.Log("IK Constraint: " + ikConstraint.Data.Name);
+            }
         }
 
         private IEnumerator CoolDownShot()
@@ -51,20 +62,44 @@ namespace Manager
                 position.x-mousePosition.x,
                 position.y-mousePosition.y 
             );
+            
+            // 计算角色位置和鼠标位置之间的距离
+            var distance =direction.magnitude;
+
+            // 设定IK的最大长度
+            var maxLength = 1;
+            if (distance > maxLength)
+            {
+                direction = direction.normalized;
+                direction *= maxLength;
+            }
+            // 获取IK约束
+            //IkConstraint ikConstraint = skeletonAnimation.Skeleton.FindIkConstraint("Yt");
+            this.ikConstraint.transform.position = mousePosition;
+            // 设置IK目标的位置
+            // ikConstraint.Target.X = direction.x;
+            // ikConstraint.Target.Y = direction.y;
+            // ikConstraint.Update();
+
             // Calculate angle in radians and convert to degrees
             var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+           
+           
 
+            // 更新IK约束
+            
+            
             // Rotate gunTrs towards mouse position
             //gunTrs.rotation = Quaternion.Euler(0, 0, angle);
             //Debug.Log(moveVertical);
             // Rotate character based on movement direction
             if (moveHorizontal != 0 || moveVertical != 0)
             {
-                skeletonAnimation.AnimationName = "z_run";
+                skeletonAnimation.AnimationName = "z_atk"; //"z_run";
             }
             else 
             {
-                skeletonAnimation.AnimationName = "z_idle";
+                skeletonAnimation.AnimationName = "z_atk";
             }
             if (moveHorizontal > 0)
             {

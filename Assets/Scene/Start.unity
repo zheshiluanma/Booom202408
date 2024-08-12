@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -268,6 +269,7 @@ GameObject:
   - component: {fileID: 341306935}
   - component: {fileID: 341306934}
   - component: {fileID: 341306933}
+  - component: {fileID: 341306936}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -288,7 +290,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 178556499}
-  m_Father: {fileID: 1586743886}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -311,7 +313,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 16777015
 --- !u!114 &341306934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +360,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &341306936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341306931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 021865d34953f49458f6c1ff76cf2bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipsText: {fileID: 178556497}
 --- !u!1 &701310410
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,6 +513,10 @@ MonoBehaviour:
   noisePos: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
   playerCtrl: {fileID: 0}
+  getKey: 0
+  remainMonster: 0
+  charge: 0
+  fixLight: 0
 --- !u!1 &1943416573
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,5 +569,4 @@ SceneRoots:
   - {fileID: 701310413}
   - {fileID: 1520951342}
   - {fileID: 1943416575}
-  - {fileID: 1584040467}
-  - {fileID: 1586743886}
+  - {fileID: 341306932}
