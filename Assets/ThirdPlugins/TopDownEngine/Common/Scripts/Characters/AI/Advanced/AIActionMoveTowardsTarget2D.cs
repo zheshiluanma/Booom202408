@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Tools;
+using UnityEngine.AI;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
@@ -54,6 +55,7 @@ namespace MoreMountains.TopDownEngine
 				return;
 			}
 			onMove?.Invoke();
+			//NavMeshAgent2D
 			if (UseMinimumXDistance)
 			{
 				if (this.transform.position.x < _brain.Target.position.x)
