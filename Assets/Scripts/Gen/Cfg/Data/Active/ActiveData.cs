@@ -26,10 +26,11 @@ public sealed partial class ActiveData :  Bright.Config.BeanBase
         { if(!_json["Atk"].IsNumber) { throw new SerializationException(); }  Atk = _json["Atk"]; }
         { if(!_json["Mov"].IsNumber) { throw new SerializationException(); }  Mov = _json["Mov"]; }
         { if(!_json["Exp"].IsNumber) { throw new SerializationException(); }  Exp = _json["Exp"]; }
+        { if(!_json["level"].IsNumber) { throw new SerializationException(); }  Level = _json["level"]; }
         PostInit();
     }
 
-    public ActiveData(int id, string Name, Active.ActiveType Type, int Hp, int Dfs, int Atk, float Mov, int Exp ) 
+    public ActiveData(int id, string Name, Active.ActiveType Type, int Hp, int Dfs, int Atk, float Mov, int Exp, int level ) 
     {
         this.Id = id;
         this.Name = Name;
@@ -39,6 +40,7 @@ public sealed partial class ActiveData :  Bright.Config.BeanBase
         this.Atk = Atk;
         this.Mov = Mov;
         this.Exp = Exp;
+        this.Level = level;
         PostInit();
     }
 
@@ -79,6 +81,10 @@ public sealed partial class ActiveData :  Bright.Config.BeanBase
     /// 击杀经验值
     /// </summary>
     public int Exp { get; private set; }
+    /// <summary>
+    /// 关卡状态
+    /// </summary>
+    public int Level { get; private set; }
 
     public const int __ID__ = -1121965128;
     public override int GetTypeId() => __ID__;
@@ -103,6 +109,7 @@ public sealed partial class ActiveData :  Bright.Config.BeanBase
         + "Atk:" + Atk + ","
         + "Mov:" + Mov + ","
         + "Exp:" + Exp + ","
+        + "Level:" + Level + ","
         + "}";
     }
     

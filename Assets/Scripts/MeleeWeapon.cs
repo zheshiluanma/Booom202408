@@ -190,12 +190,13 @@ namespace MoreMountains.TopDownEngine
 				rigidBody.gameObject.AddComponent<MMRagdollerIgnore>();
 			}
 
+			var monsterData = transform.parent.parent.GetComponent<GetMonsterActiveData>();
 			_damageOnTouch = _damageArea.AddComponent<DamageOnTouch>();
 			_damageOnTouch.SetGizmoSize(AreaSize);
 			_damageOnTouch.SetGizmoOffset(AreaOffset);
 			_damageOnTouch.TargetLayerMask = TargetLayerMask;
-			_damageOnTouch.MinDamageCaused = MinDamageCaused;
-			_damageOnTouch.MaxDamageCaused = MaxDamageCaused;
+			_damageOnTouch.MinDamageCaused = monsterData.MonsterData.Atk;
+			_damageOnTouch.MaxDamageCaused = monsterData.MonsterData.Atk;
 			_damageOnTouch.DamageDirectionMode = DamageOnTouch.DamageDirections.BasedOnOwnerPosition;
 			_damageOnTouch.DamageCausedKnockbackType = Knockback;
 			_damageOnTouch.DamageCausedKnockbackForce = KnockbackForce;

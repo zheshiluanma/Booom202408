@@ -15,21 +15,26 @@ namespace Cfg.Data
 public sealed partial class Tables
 {
     public Active.ActiveDataSet ActiveDataSet {get; }
+    public Active.HeroActiveDataSet HeroActiveDataSet {get; }
 
     public Tables(System.Func<string, JSONNode> loader)
     {
         var tables = new System.Collections.Generic.Dictionary<string, object>();
         ActiveDataSet = new Active.ActiveDataSet(loader("active_activedataset")); 
         tables.Add("Active.ActiveDataSet", ActiveDataSet);
+        HeroActiveDataSet = new Active.HeroActiveDataSet(loader("active_heroactivedataset")); 
+        tables.Add("Active.HeroActiveDataSet", HeroActiveDataSet);
         PostInit();
 
         ActiveDataSet.Resolve(tables); 
+        HeroActiveDataSet.Resolve(tables); 
         PostResolve();
     }
 
     public void TranslateText(System.Func<string, string, string> translator)
     {
         ActiveDataSet.TranslateText(translator); 
+        HeroActiveDataSet.TranslateText(translator); 
     }
     
     partial void PostInit();

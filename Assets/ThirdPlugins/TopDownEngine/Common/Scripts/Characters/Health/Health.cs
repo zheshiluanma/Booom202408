@@ -195,6 +195,7 @@ namespace MoreMountains.TopDownEngine
         protected MaterialPropertyBlock _propertyBlock;
         protected bool _hasColorProperty = false;
         public UnityEvent onKill;
+        public int Dfs;
 
         protected class InterruptiblesDamageOverTimeCoroutine
         {
@@ -433,6 +434,7 @@ namespace MoreMountains.TopDownEngine
                 return;
             }
 
+            Debug.Log($"ddddd{damage}");
             damage = ComputeDamageOutput(damage, typedDamages, true);
 			
             // we decrease the character's health by the damage

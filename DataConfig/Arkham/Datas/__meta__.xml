@@ -9,5 +9,6 @@
         </enum>
         
         <table name="ActiveDataSet" value="ActiveData" define_from_file="true" group="e,c,s" input="Datas/ActiveDataSet.xlsx"/>
+        <table name="HeroActiveDataSet" value="HeroActiveData" define_from_file="true" group="e,c,s" input="Datas/HeroActiveDataSet.xlsx"/>
     </module>
 </module>

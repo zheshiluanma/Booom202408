@@ -34,8 +34,7 @@ namespace Interaction
                 case DoorState.Charge:
                     break;
                 case DoorState.Open:
-                    SceneManager.LoadScene("Level1");
-                    DataMgr.Instance.getKey = false;
+                    DataMgr.Instance.AddLevel();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

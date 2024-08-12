@@ -22,6 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e1be35c62c03f2409a6c89b039f69ad
+    m_Address: HeroActiveDataSet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4d11db203993f6c47aecc3c9c5d07f0b, type: 2}
   m_SchemaSet:

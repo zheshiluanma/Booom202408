@@ -18,9 +18,8 @@ namespace Interaction
         {
             if (DataMgr.Instance.getKey && DataMgr.Instance.remainMonster <= 0&&DataMgr.Instance.charge>=1)
             {
-                SceneManager.LoadScene("Level1");
-                DataMgr.Instance.getKey = false;
-                DataMgr.Instance.charge = 0;
+         
+                DataMgr.Instance.AddLevel();
             }
         }
 
