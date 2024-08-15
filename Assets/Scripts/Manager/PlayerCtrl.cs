@@ -47,7 +47,7 @@ namespace Manager
             var moveVertical = Input.GetAxis("Vertical");
        
             var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-       
+            
             
             // 计算角色位置和鼠标位置之间的距离
 
@@ -114,8 +114,11 @@ namespace Manager
         void Shot()
         {
             var bullet= Instantiate(bulletPrefab);
+            var rotation = gunTrs.rotation;
+            Debug.Log(gunTrs.position + " " + rotation);
             bullet.transform.position = gunTrs.position;
-            bullet.transform.rotation = gunTrs.rotation;
+            
+            bullet.transform.rotation= Quaternion.Euler(new Vector3(0,180,rotation.eulerAngles.z+180));
         }
         
     }
