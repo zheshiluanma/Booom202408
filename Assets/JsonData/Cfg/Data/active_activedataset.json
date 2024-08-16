@@ -12,7 +12,7 @@
   },
   {
     "id": 10002,
-    "Name": "zhuizhong1",
+    "Name": "DaYan",
     "Type": 0,
     "Hp": 45,
     "Dfs": 50,
@@ -23,7 +23,7 @@
   },
   {
     "id": 10003,
-    "Name": "genzong2",
+    "Name": "LiaZui",
     "Type": 0,
     "Hp": 50,
     "Dfs": 50,
@@ -34,7 +34,7 @@
   },
   {
     "id": 10004,
-    "Name": "yuanjuli",
+    "Name": "LuDan",
     "Type": 0,
     "Hp": 40,
     "Dfs": 50,
@@ -45,7 +45,7 @@
   },
   {
     "id": 10005,
-    "Name": "zhuizhong1",
+    "Name": "DaYan",
     "Type": 0,
     "Hp": 60,
     "Dfs": 50,
@@ -56,7 +56,7 @@
   },
   {
     "id": 10006,
-    "Name": "genzong2",
+    "Name": "LiaZui",
     "Type": 0,
     "Hp": 65,
     "Dfs": 50,
@@ -67,7 +67,7 @@
   },
   {
     "id": 10007,
-    "Name": "yuanjuli",
+    "Name": "LuDan",
     "Type": 0,
     "Hp": 55,
     "Dfs": 50,
@@ -78,7 +78,7 @@
   },
   {
     "id": 10008,
-    "Name": "weirao",
+    "Name": "KouMuo",
     "Type": 1,
     "Hp": 120,
     "Dfs": 50,
@@ -100,7 +100,7 @@
   },
   {
     "id": 10010,
-    "Name": "zhuizhong1",
+    "Name": "DaYan",
     "Type": 0,
     "Hp": 75,
     "Dfs": 50,
@@ -111,7 +111,7 @@
   },
   {
     "id": 10011,
-    "Name": "genzong2",
+    "Name": "LiaZui",
     "Type": 0,
     "Hp": 80,
     "Dfs": 50,
@@ -122,7 +122,7 @@
   },
   {
     "id": 10012,
-    "Name": "yuanjuli",
+    "Name": "LuDan",
     "Type": 0,
     "Hp": 70,
     "Dfs": 50,
@@ -144,7 +144,7 @@
   },
   {
     "id": 10014,
-    "Name": "weirao",
+    "Name": "KouMuo",
     "Type": 1,
     "Hp": 135,
     "Dfs": 50,
@@ -155,7 +155,7 @@
   },
   {
     "id": 10015,
-    "Name": "zhuizhong1",
+    "Name": "DaYan",
     "Type": 0,
     "Hp": 80,
     "Dfs": 50,
@@ -166,7 +166,7 @@
   },
   {
     "id": 10016,
-    "Name": "genzong2",
+    "Name": "LiaZui",
     "Type": 0,
     "Hp": 85,
     "Dfs": 50,
@@ -177,7 +177,7 @@
   },
   {
     "id": 10017,
-    "Name": "yuanjuli",
+    "Name": "LuDan",
     "Type": 0,
     "Hp": 75,
     "Dfs": 50,
@@ -199,7 +199,7 @@
   },
   {
     "id": 10019,
-    "Name": "weirao",
+    "Name": "KouMuo",
     "Type": 1,
     "Hp": 140,
     "Dfs": 50,
@@ -210,7 +210,7 @@
   },
   {
     "id": 10020,
-    "Name": "zhuizhong1",
+    "Name": "DaYan",
     "Type": 0,
     "Hp": 80,
     "Dfs": 50,
@@ -221,7 +221,7 @@
   },
   {
     "id": 10021,
-    "Name": "genzong2",
+    "Name": "LiaZui",
     "Type": 0,
     "Hp": 85,
     "Dfs": 51,
@@ -232,7 +232,7 @@
   },
   {
     "id": 10022,
-    "Name": "yuanjuli",
+    "Name": "LuDan",
     "Type": 0,
     "Hp": 75,
     "Dfs": 52,
@@ -254,7 +254,7 @@
   },
   {
     "id": 10024,
-    "Name": "weirao",
+    "Name": "KouMuo",
     "Type": 1,
     "Hp": 140,
     "Dfs": 54,
