@@ -2,6 +2,7 @@ using System;
 using Manager;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace Interaction
 {
@@ -9,6 +10,15 @@ namespace Interaction
     {
         public UnityEvent onInteract;
         public bool isInteractable;
+
+
+        // private void Start()
+        // {
+        //     var i=Random.Range(0,sprites.Length);
+        //     GetComponent<SpriteRenderer>().sprite = sprites[i];
+        //     colliders[i].SetActive(true);
+        // }
+
         public void OnTriggerEnter2D(Collider2D other)
         {
             if(other.CompareTag("Player"))
