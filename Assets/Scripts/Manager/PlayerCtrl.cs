@@ -29,6 +29,8 @@ namespace Manager
         {
             DataMgr.Instance.player = transform.parent.parent.gameObject;
             DataMgr.Instance.playerCtrl = this;
+            var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            this.ikConstraint.transform.position = mousePosition;
         }
 
         private IEnumerator CoolDownShot()
@@ -53,9 +55,18 @@ namespace Manager
 
             // 获取IK约束
             //IkConstraint ikConstraint = skeletonAnimation.Skeleton.FindIkConstraint("Yt");
-            this.ikConstraint.transform.position = mousePosition;
+            
+            //this.ikConstraint.transform.position = mousePosition;
+            // 计算玩家位置和鼠标位置之间的向量
+            // 计算玩家位置和鼠标位置之间的角度
 
-           
+            // 设定扇形区域的角度范围
+   
+            Debug.Log(transform.rotation.eulerAngles.y + " " + ikConstraint.transform.position);
+            if(transform.rotation.eulerAngles.y>30&&mousePosition.x>transform.position.x)
+                ikConstraint.transform.position = mousePosition;
+            if(transform.rotation.eulerAngles.y<30&&mousePosition.x<transform.position.x)
+                ikConstraint.transform.position = mousePosition;
            
 
             // 更新IK约束
@@ -117,8 +128,8 @@ namespace Manager
             var rotation = gunTrs.rotation;
             Debug.Log(gunTrs.position + " " + rotation);
             bullet.transform.position = gunTrs.position;
-            
-            bullet.transform.rotation= Quaternion.Euler(new Vector3(0,180,rotation.eulerAngles.z+180));
+
+            bullet.transform.rotation = Quaternion.Euler(gunTrs.eulerAngles.x, gunTrs.eulerAngles.y, gunTrs.eulerAngles.z+180);
         }
         
     }
