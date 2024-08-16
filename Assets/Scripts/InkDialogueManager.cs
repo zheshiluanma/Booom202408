@@ -65,7 +65,7 @@ public class InkDialogueManager : MonoBehaviour
             characterImages.Add(characterBox.GetChild(i));
             charactersPos.Add("");
         }
-        //StartStory();
+        StartStory();
     }
 
     public void Clean()
