@@ -1,7 +1,10 @@
-﻿using MoreMountains.Tools;
+﻿using System;
+using MoreMountains.Tools;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 namespace MoreMountains.TopDownEngine
 {
@@ -19,6 +22,7 @@ namespace MoreMountains.TopDownEngine
 		public float AfterTimeMax = 2f;
 
 		protected float _randomTime;
+		public UnityEvent onDecisionTimeInState;
 
 		/// <summary>
 		/// On Decide we evaluate our time
@@ -26,7 +30,9 @@ namespace MoreMountains.TopDownEngine
 		/// <returns></returns>
 		public override bool Decide()
 		{
-			return EvaluateTime();
+			bool isOver = EvaluateTime();
+			
+			return isOver;
 		}
 
 		/// <summary>
@@ -36,7 +42,13 @@ namespace MoreMountains.TopDownEngine
 		protected virtual bool EvaluateTime()
 		{
 			if (_brain == null) { return false; }
-			return (_brain.TimeInThisState >= _randomTime);
+Debug.LogError(_brain.TimeInThisState);
+			bool isOver = _brain.TimeInThisState >= _randomTime;
+			if (!isOver)
+			{
+				onDecisionTimeInState.Invoke();
+			}
+			return isOver;
 		}
 
 		/// <summary>
@@ -55,6 +67,11 @@ namespace MoreMountains.TopDownEngine
 		{
 			base.OnEnterState();
 			RandomizeTime();
+		}
+
+		public override void OnExitState()
+		{
+			
 		}
 
 		/// <summary>

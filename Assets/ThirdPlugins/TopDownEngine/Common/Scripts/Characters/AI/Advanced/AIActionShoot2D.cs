@@ -45,6 +45,14 @@ namespace MoreMountains.TopDownEngine
 		protected int _numberOfShoots = 0;
 		protected bool _shooting = false;
 		public UnityEvent onShoot;
+		
+		[Header("Custom-------------------------------------------------------------------------")]
+		[Tooltip("攻击多少次停下")]
+		[SerializeField] private int attackCount;
+		[Tooltip("攻击动画时间")]
+		[SerializeField] private float attackTime;
+		private float attackTimer;
+		
 
 		/// <summary>
 		/// On init we grab our CharacterHandleWeapon ability
@@ -69,7 +77,12 @@ namespace MoreMountains.TopDownEngine
 			MakeChangesToTheWeapon();
 			TestFaceTarget();
 			TestAimAtTarget();
-			Shoot();
+			attackTimer += Time.deltaTime;
+			if (attackTimer>=attackTime)
+			{
+				Shoot();
+				attackTimer = 0;
+			}
 		}
 
 		/// <summary>
@@ -176,7 +189,7 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected virtual void Shoot()
 		{
-			if (_numberOfShoots < 1)
+			if (_numberOfShoots < attackCount)
 			{
 				TargetHandleWeaponAbility.ShootStart();
 				_numberOfShoots++;
@@ -191,6 +204,7 @@ namespace MoreMountains.TopDownEngine
 		{
 			base.OnEnterState();
 			_numberOfShoots = 0;
+			attackTimer = attackTime;
 			_shooting = true;
 			if (TargetHandleWeaponAbility.CurrentWeapon != null)
 			{
