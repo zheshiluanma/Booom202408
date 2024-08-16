@@ -40,10 +40,12 @@ public class InkDialogueManager : MonoBehaviour
     [SerializeField]
     public List<Audio> AudioClips;
 
+    public static InkDialogueManager instance;
 
     void Awake()
     {
         //Find the components
+        instance = this;
         canvas = transform.Find("UI Canvas");
         dialogueBox = canvas.Find("Dialogue Box");
         dialogueBoxText=dialogueBox.Find("Text");
@@ -228,13 +230,13 @@ public class InkDialogueManager : MonoBehaviour
         
         //改变对话框内文字 Change text
         dialogueBoxText.GetComponent<TMP_Text>().text = content;
-        LogText.GetComponent<TMP_Text>().text+= "<color=red>"+characterName + "</color=red>"+"    " + content+ " <br>";
+        //LogText.GetComponent<TMP_Text>().text+= "<color=red>"+characterName + "</color=red>"+"    " + content+ " <br>";
 
         //if (inNaoXin)
         {
-            dialogueBox.gameObject.SetActive(false);
+            //dialogueBox.gameObject.SetActive(false);
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2.5f);
             ContinueStory();
         }
         // else
@@ -329,16 +331,16 @@ public class InkDialogueManager : MonoBehaviour
             charactersPos[i] = "";
             characterImages[i].gameObject.SetActive(false);
         }
-        LogText.GetComponent<TMP_Text>().text = "";
+        //LogText.GetComponent<TMP_Text>().text = "";
         string json = File.ReadAllText(savePath + "01.json");
         LoadInk(json);
         ContinueStory() ;
     }
-    public void OnLog()
-    {
-            LogBox.gameObject.SetActive(true);
-
-    }
+    // public void OnLog()
+    // {
+    //         LogBox.gameObject.SetActive(true);
+    //
+    // }
     #endregion
     #region RPG游戏专用
     public void OnCheck()
