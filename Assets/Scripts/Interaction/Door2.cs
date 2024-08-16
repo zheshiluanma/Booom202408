@@ -18,7 +18,7 @@ namespace Interaction
         {
             if (DataMgr.Instance.remainMonster <= 0&&DataMgr.Instance.fixLight>=4)
             {
-                DataMgr.Instance.AddLevel();
+                DataMgr.Instance.PropCardSelect();
             }
         }
 

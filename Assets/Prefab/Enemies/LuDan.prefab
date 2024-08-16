@@ -4873,6 +4873,7 @@ GameObject:
   - component: {fileID: 3940086461484205184}
   - component: {fileID: 5682638053681900336}
   - component: {fileID: 7627128576536980280}
+  - component: {fileID: 2907973635036243036}
   m_Layer: 13
   m_Name: LuDan
   m_TagString: Enemy
@@ -5907,6 +5908,18 @@ MonoBehaviour:
   GizmosColor: {r: 1, g: 0.9940462, b: 0.9009434, a: 1}
   GimosSize: 0.1
   SpawnLootButton: 0
+--- !u!114 &2907973635036243036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737711177244062782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353710c5fe226bd4ca27bf4d4e2caf6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2020561302890335062
 GameObject:
   m_ObjectHideFlags: 0
