@@ -25,11 +25,13 @@ namespace Manager
         public GameObject ikConstraint;
         Coroutine _coolDownShot;
 
+        private Camera _mainCamera;
         private void Start()
         {
             DataMgr.Instance.player = transform.parent.parent.gameObject;
             DataMgr.Instance.playerCtrl = this;
-            var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _mainCamera = Camera.main;
+            var mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
             this.ikConstraint.transform.position = mousePosition;
         }
 
@@ -48,7 +50,7 @@ namespace Manager
             var moveHorizontal = Input.GetAxis("Horizontal");
             var moveVertical = Input.GetAxis("Vertical");
        
-            var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            var mousePosition =_mainCamera.ScreenToWorldPoint(Input.mousePosition);
             
             
             // 计算角色位置和鼠标位置之间的距离
@@ -62,7 +64,6 @@ namespace Manager
 
             // 设定扇形区域的角度范围
    
-            Debug.Log(transform.rotation.eulerAngles.y + " " + ikConstraint.transform.position);
             if(transform.rotation.eulerAngles.y>30&&mousePosition.x>transform.position.x)
                 ikConstraint.transform.position = mousePosition;
             if(transform.rotation.eulerAngles.y<30&&mousePosition.x<transform.position.x)
@@ -126,7 +127,6 @@ namespace Manager
         {
             var bullet= Instantiate(bulletPrefab);
             var rotation = gunTrs.rotation;
-            Debug.Log(gunTrs.position + " " + rotation);
             bullet.transform.position = gunTrs.position;
 
             bullet.transform.rotation = Quaternion.Euler(gunTrs.eulerAngles.x, gunTrs.eulerAngles.y, gunTrs.eulerAngles.z+180);
