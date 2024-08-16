@@ -4824,15 +4824,13 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
+  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
-  m_UseCustomTrailVertexStreams: 0
-  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -4852,7 +4850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8521717497903460559}
   - component: {fileID: 7392052699100084843}
-  - component: {fileID: 3268312490155779542}
+  - component: {fileID: 9131566240374469864}
   - component: {fileID: 3870858942289084803}
   - component: {fileID: 6042960485163926741}
   - component: {fileID: 5679762991211821386}
@@ -4875,9 +4873,8 @@ GameObject:
   - component: {fileID: 3940086461484205184}
   - component: {fileID: 5682638053681900336}
   - component: {fileID: 7627128576536980280}
-  - component: {fileID: 547706957728906778}
   m_Layer: 13
-  m_Name: chongci
+  m_Name: LuDan
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4930,7 +4927,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!60 &3268312490155779542
+--- !u!60 &9131566240374469864
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4974,10 +4971,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.16423798, y: 0.2436161}
-      - {x: -0.5758124, y: 0.052829534}
-      - {x: 0.14412552, y: -0.16472805}
-      - {x: 0.47954714, y: 0.046596766}
+    - - {x: -0.4195099, y: 0.32819748}
+      - {x: -0.47530365, y: 0.2769966}
+      - {x: -0.48471832, y: 0.19525337}
+      - {x: -0.34403902, y: -0.12027189}
+      - {x: -0.01248306, y: -0.20070827}
+      - {x: 0.40941012, y: 0.013126612}
+      - {x: 0.36160946, y: 0.27129358}
   m_UseDelaunayMesh: 0
 --- !u!61 &3870858942289084803
 BoxCollider2D:
@@ -5011,7 +5011,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03842926, y: -0.016289711}
+  m_Offset: {x: -0.03387451, y: 0.06489372}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5022,7 +5022,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0732574, y: 0.2896595}
+  m_Size: {x: 0.91101074, y: 0.51488495}
   m_EdgeRadius: 0
 --- !u!61 &6042960485163926741
 BoxCollider2D:
@@ -5056,7 +5056,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13325882, y: 0.44147015}
+  m_Offset: {x: -0.034000397, y: 0.31143475}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5067,7 +5067,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2240067, y: 1.1980839}
+  m_Size: {x: 0.9176712, y: 0.9983387}
   m_EdgeRadius: 0
 --- !u!210 &5679762991211821386
 SortingGroup:
@@ -5360,6 +5360,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  Dfs: 0
 --- !u!114 &5095202867810754997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5497,7 +5498,7 @@ MonoBehaviour:
   onDoNothing:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8925155011689966896}
+      - m_Target: {fileID: 7767028719269228820}
         m_TargetAssemblyTypeName: SimpleSpineCtrl, Assembly-CSharp
         m_MethodName: Idle
         m_Mode: 1
@@ -5528,7 +5529,7 @@ MonoBehaviour:
   onMove:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8925155011689966896}
+      - m_Target: {fileID: 7767028719269228820}
         m_TargetAssemblyTypeName: SimpleSpineCtrl, Assembly-CSharp
         m_MethodName: Run
         m_Mode: 1
@@ -5562,7 +5563,7 @@ MonoBehaviour:
   onShoot:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8925155011689966896}
+      - m_Target: {fileID: 7767028719269228820}
         m_TargetAssemblyTypeName: SimpleSpineCtrl, Assembly-CSharp
         m_MethodName: Attack
         m_Mode: 1
@@ -5574,6 +5575,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  attackCount: 0
+  attackTime: 0
 --- !u!114 &4849696356717533906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5817,6 +5820,9 @@ MonoBehaviour:
   Label: 
   AfterTimeMin: 2
   AfterTimeMax: 1
+  onDecisionTimeInState:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7627128576536980280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5901,27 +5907,6 @@ MonoBehaviour:
   GizmosColor: {r: 1, g: 0.9940462, b: 0.9009434, a: 1}
   GimosSize: 0.1
   SpawnLootButton: 0
---- !u!114 &547706957728906778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737711177244062782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad705bba33f3642f4bc26cd844e12c6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 3.5
-  _angularSpeed: 120
-  _acceleration: 8
-  _stoppingDistance: 0
-  _autoBraking: 1
-  _radius: 0.5
-  _quality: 0
-  _priority: 50
-  _autoRepath: 1
 --- !u!1 &2020561302890335062
 GameObject:
   m_ObjectHideFlags: 0
@@ -6355,7 +6340,7 @@ MonoBehaviour:
         DeclaredDuration: 0
         ForceSimulationSpeed: 0
         ForcedSimulationSpeed: {x: 0.1, y: 1}
---- !u!1 &5138634329004031775
+--- !u!1 &3833522166995512082
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6363,48 +6348,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8624279115446206554}
-  - component: {fileID: 4048686171027506114}
-  - component: {fileID: 3225766864079209229}
-  - component: {fileID: 8887665905308530230}
-  - component: {fileID: 8925155011689966896}
+  - component: {fileID: 4951800897600967474}
+  - component: {fileID: 1525180913852443833}
+  - component: {fileID: 6519609994354489345}
+  - component: {fileID: 1892015047460420348}
+  - component: {fileID: 7767028719269228820}
   m_Layer: 0
-  m_Name: Spine GameObject (chongci)
+  m_Name: Spine GameObject (yuanjuli)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8624279115446206554
+--- !u!4 &4951800897600967474
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5138634329004031775}
+  m_GameObject: {fileID: 3833522166995512082}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: -0.625, z: 0}
   m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7060089571361797414}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!33 &4048686171027506114
+--- !u!33 &1525180913852443833
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5138634329004031775}
+  m_GameObject: {fileID: 3833522166995512082}
   m_Mesh: {fileID: 0}
---- !u!23 &3225766864079209229
+--- !u!23 &6519609994354489345
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5138634329004031775}
+  m_GameObject: {fileID: 3833522166995512082}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -6418,7 +6403,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8d364c6c02d4eb2419139bebfbffa9b6, type: 2}
+  - {fileID: 2100000, guid: 3ddb4decfb22fe2408421df2d550533a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6440,19 +6425,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8887665905308530230
+--- !u!114 &1892015047460420348
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5138634329004031775}
+  m_GameObject: {fileID: 3833522166995512082}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 462d327713627c84aa226b12595c84b5, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 7487d102d1cd56648bf64b031e663502, type: 2}
   initialSkinName: 
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
@@ -6480,13 +6465,13 @@ MonoBehaviour:
   _animationName: 
   loop: 1
   timeScale: 1
---- !u!114 &8925155011689966896
+--- !u!114 &7767028719269228820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5138634329004031775}
+  m_GameObject: {fileID: 3833522166995512082}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b717a343403b71349be1ed6032e1fa1c, type: 3}
@@ -11732,15 +11717,13 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
+  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
-  m_UseCustomTrailVertexStreams: 0
-  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -11814,7 +11797,7 @@ Transform:
   m_Children:
   - {fileID: 8428229467135769856}
   - {fileID: 8268832765569173970}
-  - {fileID: 8624279115446206554}
+  - {fileID: 4951800897600967474}
   m_Father: {fileID: 8521717497903460559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7611508668019439655

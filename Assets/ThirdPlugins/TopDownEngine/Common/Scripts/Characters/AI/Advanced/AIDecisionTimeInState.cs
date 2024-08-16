@@ -42,7 +42,6 @@ namespace MoreMountains.TopDownEngine
 		protected virtual bool EvaluateTime()
 		{
 			if (_brain == null) { return false; }
-Debug.LogError(_brain.TimeInThisState);
 			bool isOver = _brain.TimeInThisState >= _randomTime;
 			if (!isOver)
 			{
