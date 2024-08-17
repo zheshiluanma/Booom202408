@@ -67,15 +67,6 @@ namespace MoreMountains.TopDownEngine
 					_characterMovement.SetHorizontalMovement(-1f);
 				}
 
-				if (this.transform.position.y < _brain.Target.position.y)
-				{
-					_characterMovement.SetVerticalMovement(1f);
-				}
-				else
-				{
-					_characterMovement.SetVerticalMovement(-1f);
-				}
-            
 				if (Mathf.Abs(this.transform.position.x - _brain.Target.position.x) < MinimumXDistance)
 				{
 					_characterMovement.SetHorizontalMovement(0f);
