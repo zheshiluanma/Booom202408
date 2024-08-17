@@ -126,7 +126,7 @@ namespace Manager
 
         public void UpLevel(PropAttribute propAttribute)
         {
-            playerExtraAttribute.Shields += propAttribute.ShieldBonusPT * player.GetComponent<Health>().CurrentHealth;
+            playerExtraAttribute.Shields += propAttribute.ShieldBonusPT * player.GetComponent<Health>().MaximumHealth;
             //playerExtraAttribute.ProjectileDamage += propAttribute.ProjectileDamageBonusPT*;
             playerExtraAttribute.BulletsDamage += propAttribute.BulletsDamageBonusPT * HeroActiveDataSet[nowLevel].Atk;
             playerExtraAttribute.CritRate += propAttribute.CritRate;
