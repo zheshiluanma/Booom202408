@@ -131,6 +131,7 @@ namespace Manager
             playerExtraAttribute.BulletsDamage += propAttribute.BulletsDamageBonusPT * HeroActiveDataSet[nowLevel].Atk;
             playerExtraAttribute.CritRate += propAttribute.CritRate;
             playerExtraAttribute.CritDamage += propAttribute.CritDamage;
+            LoadLevel();
         }
         
         private void LoadLevel()
