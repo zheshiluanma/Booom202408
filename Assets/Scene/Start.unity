@@ -275,7 +275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &189062040
 RectTransform:
   m_ObjectHideFlags: 0
@@ -376,6 +376,7 @@ MonoBehaviour:
   - {fileID: 8655916523966540266, guid: 06b990543b3e96e4aa7a72af17bed46b, type: 3}
   - {fileID: 219820158745827196, guid: 3f55a68172180464d89959cdfc4408c3, type: 3}
   showCount: 3
+  showCards: []
 --- !u!1 &341306931
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipsText: {fileID: 178556497}
+  upLevelPanel: {fileID: 0}
 --- !u!1 &701310410
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +634,7 @@ MonoBehaviour:
   loadProgress: 0
   noisePos: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
+  PlayerHealth: {fileID: 0}
   playerCtrl: {fileID: 0}
   getKey: 0
   remainMonster: 0
