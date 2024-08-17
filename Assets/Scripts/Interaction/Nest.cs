@@ -29,6 +29,7 @@ namespace Interaction
             TaskMgr.Instance.StartMonsterTide(18);
             InkDialogueManager.instance.inkJSONAsset = DataMgr.Instance.interactionJsonAssets[3];
             InkDialogueManager.instance.StartStory();
+            TaskMgr.Instance.CompleteTask("SetMachine",1);
         }
 
         public IEnumerator Charge()
@@ -44,6 +45,9 @@ namespace Interaction
                 if(_interactionArea.isInteractable)
                     DataMgr.Instance.charge +=duration;
                 Debug.Log("charge: " + DataMgr.Instance.charge);
+                if( DataMgr.Instance.charge>1)
+                    DataMgr.Instance.charge = 1;
+                TaskMgr.Instance.CompleteTask("SetMachine", (int)(DataMgr.Instance.charge*100));
                 yield return new WaitForSeconds(1); // 等待下一帧
             }
             halo.SetActive(false);

@@ -23,6 +23,7 @@ namespace Interaction
             {
                 StartCoroutine(monsterTideGroup.StartMonsterTide());
             }
+            TaskMgr.Instance.CompleteTask("FixLight",DataMgr.Instance.fixLight);
         }
     }
 }

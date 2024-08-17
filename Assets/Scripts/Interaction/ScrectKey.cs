@@ -18,7 +18,11 @@ namespace Interaction
         {
             _interactionArea.isInteractable = false;
             DataMgr.Instance.getKey = true;
-            
+            if (DataMgr.Instance.nowLevel == 0)
+            {
+                TaskMgr.Instance.CompleteTask("FindHuman",1);
+            }
+            TaskMgr.Instance.CompleteTask(DataMgr.Instance.nowLevel>=1? "GetKey17":"GetKey14",1);
             gameObject.SetActive(false);
         }
         

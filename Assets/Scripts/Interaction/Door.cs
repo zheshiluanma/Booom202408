@@ -31,6 +31,7 @@ namespace Interaction
                         _state = DoorState.Charge;
                         InkDialogueManager.instance.inkJSONAsset = DataMgr.Instance.interactionJsonAssets[2];
                         InkDialogueManager.instance.StartStory();
+                        TaskMgr.Instance.CompleteTask(DataMgr.Instance.nowLevel>=1? "Reboot17":"Reboot14",1);
                         StartCoroutine(monsterTideCreatePoint.StartMonsterCount());
                         StartCoroutine(OpenDoor());
                     }
