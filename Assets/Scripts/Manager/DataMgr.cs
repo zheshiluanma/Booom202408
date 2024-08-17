@@ -62,6 +62,7 @@ namespace Manager
         public float loadProgress;
         public Vector3 noisePos;
         public GameObject player;
+        public Health PlayerHealth;
         public PlayerCtrl playerCtrl;
         public bool getKey;
         public int remainMonster;
@@ -76,6 +77,7 @@ namespace Manager
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            PlayerHealth = player.GetComponent<Health>();
         }
         
         public void LoadData(Action<float> loadProgressCallBack=null)
@@ -118,10 +120,19 @@ namespace Manager
             return HeroActiveDataSet[nowLevel].Atk;
         }
         
-        public void PropCardSelect()
+        public void ShowUpLevelPanel()
         {
             //展示选卡面板
-            
+            TipsMgr.Instance.ShowUpLevelPanel();
+        }
+
+        public void UpLevel(PropAttribute propAttribute)
+        {
+            playerExtraAttribute.Shields += propAttribute.ShieldBonusPT * PlayerHealth.CurrentHealth;
+            //playerExtraAttribute.ProjectileDamage += propAttribute.ProjectileDamageBonusPT*;
+            playerExtraAttribute.BulletsDamage += propAttribute.BulletsDamageBonusPT * HeroActiveDataSet[nowLevel].Atk;
+            playerExtraAttribute.CritRate += propAttribute.CritRate;
+            playerExtraAttribute.CritDamage += propAttribute.CritDamage;
         }
         
         private void LoadLevel()

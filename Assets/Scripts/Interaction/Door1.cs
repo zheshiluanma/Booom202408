@@ -19,7 +19,7 @@ namespace Interaction
             if (DataMgr.Instance.getKey && DataMgr.Instance.remainMonster <= 0&&DataMgr.Instance.charge>=1)
             {
          
-                DataMgr.Instance.PropCardSelect();
+                DataMgr.Instance.ShowUpLevelPanel();
             }
         }
 

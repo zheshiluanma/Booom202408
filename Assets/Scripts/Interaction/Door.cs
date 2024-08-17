@@ -34,7 +34,7 @@ namespace Interaction
                 case DoorState.Charge:
                     break;
                 case DoorState.Open:
-                    DataMgr.Instance.PropCardSelect();
+                    DataMgr.Instance.ShowUpLevelPanel();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
