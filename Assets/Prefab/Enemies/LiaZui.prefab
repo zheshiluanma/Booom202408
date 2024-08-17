@@ -5514,7 +5514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: 
-  TargetHandleWeaponAbility: {fileID: 0}
+  TargetHandleWeaponAbility: {fileID: 112824244650415389}
   AimOrigin: 0
   FaceTarget: 1
   AimAtTarget: 0
