@@ -706,6 +706,9 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 52b67de694a0a294f8338b39551caff5, type: 3}
   - {fileID: 4900000, guid: c464daa97959f00439d9fbd229e745f0, type: 3}
   - {fileID: 4900000, guid: 4c100cd9e5cfda240a1f87feea21f38a, type: 3}
+  - {fileID: 4900000, guid: dce333c1ee68d3340b12cb9716a471e4, type: 3}
+  - {fileID: 4900000, guid: 78f2e686c0e19344ab37a6d4506b2197, type: 3}
+  polyNavMap: {fileID: 0}
 --- !u!1 &1681250720
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89f57f71539a0a47a0143ead29178db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level1
 --- !u!4 &1943416575
 Transform:
   m_ObjectHideFlags: 0

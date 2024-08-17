@@ -24,8 +24,11 @@ namespace Manager
         public float mixDuration=0.15f;
         public GameObject ikConstraint;
         Coroutine _coolDownShot;
-
+        
         private Camera _mainCamera;
+
+        public GameObject[] backpacks;
+        
         private void Start()
         {
             DataMgr.Instance.player = transform.parent.parent.gameObject;
