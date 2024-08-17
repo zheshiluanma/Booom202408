@@ -5909,6 +5909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353710c5fe226bd4ca27bf4d4e2caf6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: LiaZui
 --- !u!1 &2020561302890335062
 GameObject:
   m_ObjectHideFlags: 0

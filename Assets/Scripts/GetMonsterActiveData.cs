@@ -9,9 +9,10 @@ using UnityEngine;
 public class GetMonsterActiveData : MonoBehaviour
 {
     public ActiveData MonsterData;
+    public string id;
     private void Awake()
     {
-        var id=gameObject.name.Replace("Variant","");
+        //var id=gameObject.name.Replace("Variant","");
         Debug.Log(id);
         var data = DataMgr.Instance.GetEnemyData(id);
         MonsterData = data;
