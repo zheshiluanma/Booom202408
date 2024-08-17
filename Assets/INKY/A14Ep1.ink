@@ -12,7 +12,7 @@
 请注意, A14层的系统重启和校准需要权限密钥。请寻找该层的管理员以获取密钥。 #CHAR:NOVACO CORTEX:Normal
 难以置信, 为什么日常维护工作不能让管理员直接在电梯口跟我交接任务? #CHAR:NO.9734:Normal
 非得让我满矿洞地找人, 真是效率至上的好榜样啊。 #CHAR:NO.9734:Normal
-塔尔塔洛斯生物识别监控网络无法连接A14层的管理员。请尽快找到该层的权限密钥。 #CHAR:NOVACO CORTEX:Normal
+塔尔塔洛斯生物识别监控网络无法连接A14层的管理员。请尽快找到该层的权限密钥。 #CHAR:NOVACO CORTEX:Normal #updatetask
 无法连接? 这可真是个严峻的情况。但也不代表非得压榨一个刚刚苏醒, 还失去了绝大部分记忆的可怜虫跑断腿去扮演名侦探吧。 #CHAR:NO.9734:Normal
 您的生命稳定模块密钥将于现在启动倒计时。您可以在系统视觉界面进行实时监控。#CHAR:NOVACO CORTEX:Normal
 请务必确保在倒计时结束前获取A14层权限密钥。 #CHAR:NOVACO CORTEX:Normal
