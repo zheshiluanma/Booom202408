@@ -1,3 +1,4 @@
+using Prop;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;

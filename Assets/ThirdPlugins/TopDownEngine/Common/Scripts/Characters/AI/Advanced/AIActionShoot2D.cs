@@ -52,6 +52,7 @@ namespace MoreMountains.TopDownEngine
 		[Tooltip("攻击动画时间")]
 		[SerializeField] private float attackTime;
 		private float attackTimer;
+		protected CharacterMovement _characterMovement;
 		
 
 		/// <summary>
@@ -67,6 +68,7 @@ namespace MoreMountains.TopDownEngine
 			{
 				TargetHandleWeaponAbility = _character?.FindAbility<CharacterHandleWeapon>();
 			}
+			_characterMovement = this.gameObject.GetComponentInParent<Character>()?.FindAbility<CharacterMovement>();
 		}
 
 		/// <summary>
@@ -142,14 +144,33 @@ namespace MoreMountains.TopDownEngine
 				return;
 			}
 
-			if (this.transform.position.x > _brain.Target.position.x)
+			if (this.transform.position.x < _brain.Target.position.x)
 			{
-				_orientation2D.FaceDirection(-1);
+				_characterMovement.SetHorizontalMovement(1f);
 			}
 			else
 			{
-				_orientation2D.FaceDirection(1);
-			}            
+				_characterMovement.SetHorizontalMovement(-1f);
+			}
+
+			if (this.transform.position.y < _brain.Target.position.y)
+			{
+				_characterMovement.SetVerticalMovement(1f);
+			}
+			else
+			{
+				_characterMovement.SetVerticalMovement(-1f);
+			}
+            
+			if (Mathf.Abs(this.transform.position.x - _brain.Target.position.x) < 0.1f)
+			{
+				_characterMovement.SetHorizontalMovement(0f);
+			}
+
+			if (Mathf.Abs(this.transform.position.y - _brain.Target.position.y) < 0.1f)
+			{
+				_characterMovement.SetVerticalMovement(0f);
+			}
 		}
 
 		/// <summary>

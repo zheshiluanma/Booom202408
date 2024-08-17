@@ -1,75 +1,76 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using System;
 using Manager;
+using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
 
-public class UpLevelPanel : MonoBehaviour
+namespace Prop
 {
-    [SerializeField]private GameObject[] propPrefabs;
-
-    [SerializeField]private int showCount;
-
-    [SerializeField]private GameObject[] showCards;
-
-    private void Awake()
+    public class UpLevelPanel : MonoBehaviour
     {
-        Hide();
-    }
+        [SerializeField]private GameObject[] propPrefabs;
 
-    public void Open()
-    {
-        Show();
-        RandomSelect();
-    }
+        [SerializeField]private int showCount;
 
-    private void RandomSelect()
-    {
-        Random random = new Random();
+        [SerializeField]private GameObject[] showCards;
+
+        private void Awake()
+        {
+            Hide();
+        }
+
+        public void Open()
+        {
+            Show();
+            RandomSelect();
+        }
+
+        private void RandomSelect()
+        {
+            Random random = new Random();
         
-        int arrayLength = propPrefabs.Length;
-        HashSet<int> usedIndices = new HashSet<int>();
+            int arrayLength = propPrefabs.Length;
+            HashSet<int> usedIndices = new HashSet<int>();
 
-        for (int i = 0; i < showCount; i++)
-        {
-            int randomIndex;
-            do
+            for (int i = 0; i < showCount; i++)
             {
-                randomIndex = random.Next(arrayLength);
-            } while (usedIndices.Contains(randomIndex));
+                int randomIndex;
+                do
+                {
+                    randomIndex = random.Next(arrayLength);
+                } while (usedIndices.Contains(randomIndex));
 
-            showCards[i] = propPrefabs[randomIndex];
-            usedIndices.Add(randomIndex);
+                showCards[i] = propPrefabs[randomIndex];
+                usedIndices.Add(randomIndex);
+            }
+
+            foreach (var go in showCards)
+            {
+                Instantiate(go,transform).GetComponent<Button>().onClick.AddListener(()=>OnPropCardClick(go.GetComponent<Prop>().propAttribute));
+            }
         }
 
-        foreach (var go in showCards)
+        private void OnPropCardClick(PropAttribute propAttribute)
         {
-            Instantiate(go,transform).GetComponent<Button>().onClick.AddListener(()=>OnPropCardClick(go.GetComponent<Prop>().propAttribute));
-        }
-    }
+            foreach (var go in showCards)
+            {
+                DestroyImmediate(go);
+            }
 
-    private void OnPropCardClick(PropAttribute propAttribute)
-    {
-        foreach (var go in showCards)
+            Hide();
+
+            DataMgr.Instance.UpLevel(propAttribute);
+        }
+
+        private void Show()
         {
-            DestroyImmediate(go);
+            gameObject.SetActive(true);
         }
 
-        Hide();
-
-        DataMgr.Instance.UpLevel(propAttribute);
-    }
-
-    private void Show()
-    {
-        gameObject.SetActive(true);
-    }
-
-    private void Hide()
-    {
-        gameObject.SetActive(false);
-    }
+        private void Hide()
+        {
+            gameObject.SetActive(false);
+        }
     
+    }
 }

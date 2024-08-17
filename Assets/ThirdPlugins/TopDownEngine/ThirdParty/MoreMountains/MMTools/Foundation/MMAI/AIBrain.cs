@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using PolyNav;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -36,6 +37,7 @@ namespace MoreMountains.Tools
 		public bool ResetBrainOnStart = true;
 		public bool ResetBrainOnEnable = false;
 
+		private PolyNavAgent polyNavAgent;
 		[Header("Frequencies")]
 		/// the frequency (in seconds) at which to perform actions (lower values : higher frequency, high values : lower frequency but better performance)
 		public float ActionsFrequency = 0f;
@@ -50,6 +52,7 @@ namespace MoreMountains.Tools
 		/// the min and max values between which to randomize the decision frequency
 		[MMVector("min","max")]
 		public Vector2 RandomDecisionFrequency = new Vector2(0.5f, 1f);
+		
 
 		protected AIDecision[] _decisions;
 		protected AIAction[] _actions;
@@ -94,6 +97,9 @@ namespace MoreMountains.Tools
 				ActionsFrequency = Random.Range(RandomActionFrequency.x, RandomActionFrequency.y);
 				DecisionFrequency = Random.Range(RandomDecisionFrequency.x, RandomDecisionFrequency.y);
 			}
+
+			polyNavAgent = GetComponent<PolyNavAgent>();
+			polyNavAgent.map=MapCtrl.Instance.polyNavMap;
 		}
 
 		/// <summary>
@@ -306,6 +312,11 @@ namespace MoreMountains.Tools
 					DestroyImmediate(decision);
 				}
 			}
+		}
+
+		public void SetTargetDestination()
+		{
+			polyNavAgent.SetDestination(Target.position);
 		}
 	}
 }

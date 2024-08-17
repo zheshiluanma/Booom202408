@@ -55,7 +55,7 @@ namespace MoreMountains.TopDownEngine
 				return;
 			}
 			onMove?.Invoke();
-			//NavMeshAgent2D
+			_brain.SetTargetDestination();
 			if (UseMinimumXDistance)
 			{
 				if (this.transform.position.x < _brain.Target.position.x)
@@ -91,7 +91,6 @@ namespace MoreMountains.TopDownEngine
 				_direction = (_brain.Target.position - this.transform.position).normalized;
 				_characterMovement.SetMovement(_direction);
 			}
-			
 		}
 
 		/// <summary>

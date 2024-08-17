@@ -1,26 +1,27 @@
 using System.Collections;
-using System.Collections.Generic;
-using Interaction;
 using Manager;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class MonsterTideGroup : MonoBehaviour
+namespace Interaction
 {
-    [ShowInInspector] public MonsterTideCreatePoint ponit1;
-    [ShowInInspector] public MonsterTideCreatePoint ponit2;
-    public MonsterTideCreatePoint[] monsterTideCreatePoints;
-
-    public IEnumerator StartMonsterTide()
+    public class MonsterTideGroup : MonoBehaviour
     {
-        DataMgr.Instance.remainMonster = 23;
-        yield return ponit1.StartMonsterCount();
-        yield return ponit2.StartMonsterCount();
-        
-        for (var i = 0; i < monsterTideCreatePoints.Length; i++)
+        [ShowInInspector] public MonsterTideCreatePoint ponit1;
+        [ShowInInspector] public MonsterTideCreatePoint ponit2;
+        public MonsterTideCreatePoint[] monsterTideCreatePoints;
+
+        public IEnumerator StartMonsterTide()
         {
-            StartCoroutine(monsterTideCreatePoints[i].StartMonsterCount())  ;
+            DataMgr.Instance.remainMonster = 23;
+            yield return ponit1.StartMonsterCount();
+            yield return ponit2.StartMonsterCount();
+        
+            for (var i = 0; i < monsterTideCreatePoints.Length; i++)
+            {
+                StartCoroutine(monsterTideCreatePoints[i].StartMonsterCount())  ;
+            }
+            yield break;
         }
-        yield break;
     }
 }

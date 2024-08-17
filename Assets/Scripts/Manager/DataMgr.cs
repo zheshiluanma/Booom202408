@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Cfg.Data.Active;
 using MoreMountains.TopDownEngine;
+using PolyNav;
 using SimpleJSON;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -86,6 +87,7 @@ namespace Manager
         public TextAsset[] inkJSONAssets;
         public List<string> sceneList=new List<string>(){"Level1","Level2","Level3","Level4"};
         public TextAsset[] interactionJsonAssets;
+        public PolyNavMap polyNavMap;
 
         public void Awake()
         {
