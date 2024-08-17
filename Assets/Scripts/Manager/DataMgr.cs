@@ -137,6 +137,7 @@ namespace Manager
         {
             //展示选卡面板
             TipsMgr.Instance.ShowUpLevelPanel();
+            TaskMgr.Instance.ClearTask();
         }
 
         public void UpLevel(PropAttribute propAttribute)
@@ -156,6 +157,7 @@ namespace Manager
             DataMgr.Instance.getKey = false;
             DataMgr.Instance.charge = 0;
             DataMgr.Instance.fixLight = 0;
+            TaskMgr.Instance.AddTask();
         }
         
         public string GetRandomScene()
