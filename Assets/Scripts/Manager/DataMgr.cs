@@ -61,7 +61,19 @@ namespace Manager
         public HeroActiveDataSet HeroActiveDataSet;
         public float loadProgress;
         public Vector3 noisePos;
-        public GameObject player;
+
+        public GameObject player
+        {
+            get=>_player;
+            set
+            {
+                _player = value;
+                PlayerHealth = _player.GetComponent<Health>();
+            }
+        }
+
+        private GameObject _player;
+        public Health PlayerHealth;
         public PlayerCtrl playerCtrl;
         public bool getKey;
         public int remainMonster;
@@ -71,7 +83,10 @@ namespace Manager
         public Dictionary<int,List<ActiveData>> activeDataDic=new Dictionary<int, List<ActiveData>>();
         
         public PlayerExtraAttribute playerExtraAttribute=new PlayerExtraAttribute();
-        
+        public TextAsset[] inkJSONAssets;
+        public List<string> sceneList=new List<string>(){"Level1","Level2","Level3","Level4"};
+        public TextAsset[] interactionJsonAssets;
+
         public void Awake()
         {
             Instance = this;
@@ -115,7 +130,7 @@ namespace Manager
         
         public int GetShotDamage()
         {
-            return HeroActiveDataSet[nowLevel].Atk;
+            return HeroActiveDataSet[nowLevel+1].Atk;
         }
         
         public void ShowUpLevelPanel()
@@ -126,7 +141,7 @@ namespace Manager
 
         public void UpLevel(PropAttribute propAttribute)
         {
-            playerExtraAttribute.Shields += propAttribute.ShieldBonusPT * player.GetComponent<Health>().MaximumHealth;
+            playerExtraAttribute.Shields += propAttribute.ShieldBonusPT * PlayerHealth.CurrentHealth;
             //playerExtraAttribute.ProjectileDamage += propAttribute.ProjectileDamageBonusPT*;
             playerExtraAttribute.BulletsDamage += propAttribute.BulletsDamageBonusPT * HeroActiveDataSet[nowLevel].Atk;
             playerExtraAttribute.CritRate += propAttribute.CritRate;
@@ -137,11 +152,19 @@ namespace Manager
         private void LoadLevel()
         {
             nowLevel++;
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene(GetRandomScene());
             DataMgr.Instance.getKey = false;
             DataMgr.Instance.charge = 0;
             DataMgr.Instance.fixLight = 0;
         }
         
+        public string GetRandomScene()
+        {
+            var random = new System.Random();
+            var index = random.Next(0, sceneList.Count);
+            var sceneName = sceneList[index];
+            sceneList.Remove(sceneName);
+            return sceneName;
+        }
     }
 }

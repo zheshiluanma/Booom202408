@@ -10,6 +10,7 @@ namespace Interaction
     {
         public UnityEvent onInteract;
         public bool isInteractable;
+        public UnityEvent onEnter;
 
 
         // private void Start()
@@ -26,6 +27,7 @@ namespace Interaction
                 Debug.Log("Player entered the interaction area");
                 isInteractable = true;
                 TipsMgr.Instance.ShowTips("Press E to interact");
+                onEnter.Invoke();
             }
         }
         
@@ -36,6 +38,7 @@ namespace Interaction
                 Debug.Log("Player exited the interaction area");
                 isInteractable = false;
                 TipsMgr.Instance.HideTips();
+                
             }
         }
         
@@ -46,6 +49,7 @@ namespace Interaction
                 Debug.Log("Player entered the interaction area");
                 isInteractable = true;
                 TipsMgr.Instance.ShowTips("Press E to interact");
+                onEnter.Invoke();
             }
         }
         

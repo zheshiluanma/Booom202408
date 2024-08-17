@@ -11,9 +11,11 @@ namespace Interaction
         private InteractionArea _interactionArea;
         private DoorState _state=DoorState.Close;
         public MonsterTideCreatePoint monsterTideCreatePoint;
+        private bool _playDialogue = false;
         private void Start()
         {
             _interactionArea = GetComponent<InteractionArea>();
+            _interactionArea.onEnter.AddListener(OnEnter); 
         }
 
         public void OnInteract()
@@ -27,6 +29,8 @@ namespace Interaction
                         DataMgr.Instance.getKey = false;
                         TaskMgr.Instance.StartMonsterTide(13);
                         _state = DoorState.Charge;
+                        InkDialogueManager.instance.inkJSONAsset = DataMgr.Instance.interactionJsonAssets[2];
+                        InkDialogueManager.instance.StartStory();
                         StartCoroutine(monsterTideCreatePoint.StartMonsterCount());
                         StartCoroutine(OpenDoor());
                     }
@@ -39,7 +43,16 @@ namespace Interaction
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            
+        }
+
+        public void OnEnter()
+        {
+            if(!_playDialogue)
+            {
+                InkDialogueManager.instance.inkJSONAsset = DataMgr.Instance.interactionJsonAssets[1];
+                InkDialogueManager.instance.StartStory();
+                _playDialogue = true;
+            }
         }
 
         private IEnumerator OpenDoor()

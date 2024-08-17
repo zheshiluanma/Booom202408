@@ -41,6 +41,7 @@ public class InkDialogueManager : MonoBehaviour
     public List<Audio> AudioClips;
 
     public static InkDialogueManager instance;
+    public Action OnDialogueEnd { get; set; }
 
     void Awake()
     {
@@ -67,7 +68,7 @@ public class InkDialogueManager : MonoBehaviour
             characterImages.Add(characterBox.GetChild(i));
             charactersPos.Add("");
         }
-        StartStory();
+        //StartStory();
     }
 
     public void Clean()
@@ -131,7 +132,7 @@ public class InkDialogueManager : MonoBehaviour
                
                 dialogueBox.gameObject.SetActive(false);
                 characterBox.gameObject.SetActive(false);
-               
+                OnDialogueEnd?.Invoke();
             }
         }
     }

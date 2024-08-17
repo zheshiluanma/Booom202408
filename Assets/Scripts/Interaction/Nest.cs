@@ -27,6 +27,8 @@ namespace Interaction
                 StartCoroutine(monsterTideCreatePoint.StartMonsterCount());
             }
             TaskMgr.Instance.StartMonsterTide(18);
+            InkDialogueManager.instance.inkJSONAsset = DataMgr.Instance.interactionJsonAssets[3];
+            InkDialogueManager.instance.StartStory();
         }
 
         public IEnumerator Charge()

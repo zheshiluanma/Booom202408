@@ -24,7 +24,7 @@ namespace Scene.Start
         {
             if (progress > 0.95f)
             {
-                EnterGame(sceneName);
+                EnterGame(DataMgr.Instance.GetRandomScene());
             }
         }
 
