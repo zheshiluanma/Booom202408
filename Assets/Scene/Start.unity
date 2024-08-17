@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -633,14 +634,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadProgress: 0
   noisePos: {x: 0, y: 0, z: 0}
-  player: {fileID: 0}
   PlayerHealth: {fileID: 0}
   playerCtrl: {fileID: 0}
   getKey: 0
   remainMonster: 0
   charge: 0
   fixLight: 0
-  nowLevel: 4
+  nowLevel: 0
+  inkJSONAssets:
+  - {fileID: 4900000, guid: 5ca589fcc06fe4242b6c10baf7edc18f, type: 3}
+  - {fileID: 4900000, guid: add96705d4ee20645843ec536f8da681, type: 3}
+  - {fileID: 4900000, guid: 259efdb354889474a90ae14470b4b769, type: 3}
+  - {fileID: 4900000, guid: b62964bb6a1b67d439584c8f62f6a40f, type: 3}
+  - {fileID: 4900000, guid: aee202ac2318a9646865c9a34cc5a647, type: 3}
 --- !u!1 &1943416573
 GameObject:
   m_ObjectHideFlags: 0
