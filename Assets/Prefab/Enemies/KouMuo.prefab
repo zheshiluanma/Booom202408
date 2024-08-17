@@ -4873,6 +4873,7 @@ GameObject:
   - component: {fileID: 3940086461484205184}
   - component: {fileID: 7627128576536980280}
   - component: {fileID: 3068634238418397623}
+  - component: {fileID: 3772172361965508660}
   m_Layer: 13
   m_Name: KouMuo
   m_TagString: Enemy
@@ -5554,7 +5555,7 @@ MonoBehaviour:
   Label: 
   TargetHandleWeaponAbility: {fileID: 112824244650415389}
   AimOrigin: 0
-  FaceTarget: 0
+  FaceTarget: 1
   AimAtTarget: 0
   OnlyAimWhenInState: 0
   onShoot:
@@ -5572,8 +5573,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  attackCount: 0
-  attackTime: 0
+  attackCount: 1
+  attackTime: 2
 --- !u!114 &4849696356717533906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5602,8 +5603,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: AttackTime
-  AfterTimeMin: 2
-  AfterTimeMax: 1
+  AfterTimeMin: 3.5
+  AfterTimeMax: 2.5
   onDecisionTimeInState:
     m_PersistentCalls:
       m_Calls: []
@@ -5917,6 +5918,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: KouMuo
+--- !u!114 &3772172361965508660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737711177244062782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cc6a4987f7c684798156c56d545838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _map: {fileID: 0}
+  maxSpeed: 3.5
+  maxForce: 10
+  stoppingDistance: 0.1
+  slowingDistance: 1
+  lookAheadDistance: 0.41
+  avoidRadius: 0.39
+  avoidanceConsiderStuckedTime: 3
+  avoidanceConsiderReachedDistance: 1
+  rotateTransform: 0
+  rotateSpeed: 350
+  centerOffset: {x: 0, y: 0}
+  repath: 1
+  restrict: 1
+  closerPointOnInvalid: 1
+  debugPath: 1
 --- !u!1 &2020561302890335062
 GameObject:
   m_ObjectHideFlags: 0

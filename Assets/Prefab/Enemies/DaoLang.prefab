@@ -4872,8 +4872,8 @@ GameObject:
   - component: {fileID: 3940086461484205184}
   - component: {fileID: 5682638053681900336}
   - component: {fileID: 7627128576536980280}
-  - component: {fileID: 547706957728906778}
   - component: {fileID: 4966392608488125406}
+  - component: {fileID: 2828934234115224648}
   m_Layer: 13
   m_Name: DaoLang
   m_TagString: Enemy
@@ -5453,7 +5453,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8925155011689966896}
         m_TargetAssemblyTypeName: SimpleSpineCtrl, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Idle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5484,7 +5484,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8925155011689966896}
         m_TargetAssemblyTypeName: SimpleSpineCtrl, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Run
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5510,7 +5510,7 @@ MonoBehaviour:
   Label: 
   TargetHandleWeaponAbility: {fileID: 112824244650415389}
   AimOrigin: 0
-  FaceTarget: 0
+  FaceTarget: 1
   AimAtTarget: 0
   OnlyAimWhenInState: 0
   onShoot:
@@ -5518,7 +5518,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8925155011689966896}
         m_TargetAssemblyTypeName: SimpleSpineCtrl, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Attack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5528,8 +5528,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  attackCount: 0
-  attackTime: 0
+  attackCount: 1
+  attackTime: 1.2
 --- !u!114 &4849696356717533906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5771,8 +5771,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
-  AfterTimeMin: 2
-  AfterTimeMax: 1
+  AfterTimeMin: 2.7
+  AfterTimeMax: 1.7
   onDecisionTimeInState:
     m_PersistentCalls:
       m_Calls: []
@@ -5860,27 +5860,6 @@ MonoBehaviour:
   GizmosColor: {r: 1, g: 0.9940462, b: 0.9009434, a: 1}
   GimosSize: 0.1
   SpawnLootButton: 0
---- !u!114 &547706957728906778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737711177244062782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad705bba33f3642f4bc26cd844e12c6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 3.5
-  _angularSpeed: 120
-  _acceleration: 8
-  _stoppingDistance: 0
-  _autoBraking: 1
-  _radius: 0.5
-  _quality: 0
-  _priority: 50
-  _autoRepath: 1
 --- !u!114 &4966392608488125406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5894,6 +5873,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: DaoLang
+--- !u!114 &2828934234115224648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737711177244062782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93cc6a4987f7c684798156c56d545838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _map: {fileID: 0}
+  maxSpeed: 3.5
+  maxForce: 10
+  stoppingDistance: 0.1
+  slowingDistance: 1
+  lookAheadDistance: 0.41
+  avoidRadius: 0.39
+  avoidanceConsiderStuckedTime: 3
+  avoidanceConsiderReachedDistance: 1
+  rotateTransform: 0
+  rotateSpeed: 350
+  centerOffset: {x: 0, y: 0}
+  repath: 1
+  restrict: 1
+  closerPointOnInvalid: 1
+  debugPath: 1
 --- !u!1 &2020561302890335062
 GameObject:
   m_ObjectHideFlags: 0
