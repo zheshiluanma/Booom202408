@@ -27,7 +27,7 @@ namespace Manager
         
         private Camera _mainCamera;
 
-        public GameObject[] backpacks;
+        public BackpackItem[] backpacks;
         
         private void Start()
         {
