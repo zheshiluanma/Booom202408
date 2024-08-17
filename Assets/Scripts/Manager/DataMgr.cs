@@ -85,12 +85,12 @@ namespace Manager
         public PlayerExtraAttribute playerExtraAttribute=new PlayerExtraAttribute();
         public TextAsset[] inkJSONAssets;
         public List<string> sceneList=new List<string>(){"Level1","Level2","Level3","Level4"};
+        public TextAsset[] interactionJsonAssets;
 
         public void Awake()
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            PlayerHealth = player.GetComponent<Health>();
         }
         
         public void LoadData(Action<float> loadProgressCallBack=null)
@@ -130,7 +130,7 @@ namespace Manager
         
         public int GetShotDamage()
         {
-            return HeroActiveDataSet[nowLevel].Atk;
+            return HeroActiveDataSet[nowLevel+1].Atk;
         }
         
         public void ShowUpLevelPanel()
