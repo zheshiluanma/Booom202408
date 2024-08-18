@@ -14,6 +14,8 @@ namespace Prop
 
         [SerializeField]private GameObject[] showCards;
 
+        public Transform trs;
+
         public void Open()
         {
             Show();
@@ -42,7 +44,7 @@ namespace Prop
 
             foreach (var go in showCards)
             {
-                Instantiate(go,transform).GetComponent<Button>().onClick.AddListener(()=>OnPropCardClick(go.GetComponent<Prop>().propAttribute));
+                Instantiate(go,trs).GetComponent<Button>().onClick.AddListener(()=>OnPropCardClick(go.GetComponent<Prop>().propAttribute));
             }
         }
 
