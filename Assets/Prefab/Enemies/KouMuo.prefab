@@ -4851,7 +4851,7 @@ GameObject:
   - component: {fileID: 8521717497903460559}
   - component: {fileID: 7392052699100084843}
   - component: {fileID: 1845255899759053318}
-  - component: {fileID: 3634304212160832486}
+  - component: {fileID: 1998334950294641397}
   - component: {fileID: 5679762991211821386}
   - component: {fileID: 9130898842718092114}
   - component: {fileID: 7685031397778099745}
@@ -4997,8 +4997,8 @@ PolygonCollider2D:
       - {x: 0.41768646, y: -0.029855728}
       - {x: 0.42055798, y: -0.0018883348}
   m_UseDelaunayMesh: 0
---- !u!60 &3634304212160832486
-PolygonCollider2D:
+--- !u!61 &1998334950294641397
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5029,7 +5029,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.9702234}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5039,34 +5039,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.060626984, y: 1.3109875}
-      - {x: -0.0727005, y: 1.1814919}
-      - {x: -0.15846252, y: 1.1495361}
-      - {x: -0.30650622, y: 1.0615366}
-      - {x: -0.30786896, y: 1.1035595}
-      - {x: -0.31380218, y: 1.1108781}
-      - {x: -0.43079758, y: 1.0274601}
-      - {x: -0.45328903, y: 0.9001522}
-      - {x: -0.3986206, y: 0.8221264}
-      - {x: -0.36478043, y: 0.7802925}
-      - {x: -0.31089783, y: 0.73706055}
-      - {x: -0.23155594, y: 0.7022114}
-      - {x: -0.16719437, y: 0.69628525}
-      - {x: -0.11187363, y: 0.49559975}
-      - {x: -0.031038642, y: 0.30111146}
-      - {x: 0.00730896, y: 0.29905128}
-      - {x: 0.12182617, y: 0.5023861}
-      - {x: 0.17899323, y: 0.6510544}
-      - {x: 0.23939514, y: 0.6273689}
-      - {x: 0.26838684, y: 0.6478958}
-      - {x: 0.35329056, y: 0.59296036}
-      - {x: 0.47753906, y: 0.7757263}
-      - {x: 0.52905655, y: 0.9984741}
-      - {x: 0.47188187, y: 1.2249966}
-      - {x: 0.29337978, y: 1.2751942}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1, y: 0.66054726}
+  m_EdgeRadius: 0
 --- !u!210 &5679762991211821386
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -5278,7 +5253,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  InitialWeapon: {fileID: 114594623923584052, guid: eb5f4c470df963240b35b6697796a77c,
+  InitialWeapon: {fileID: 114594623923584052, guid: 0676d86f1e99a244388a550fa6e70026,
     type: 3}
   CanPickupWeapons: 1
   WeaponUseFeedback: {fileID: 0}
@@ -5524,6 +5499,7 @@ MonoBehaviour:
   Label: 
   UseMinimumXDistance: 1
   MinimumXDistance: 0.1
+  speed: 3.5
   onMove:
     m_PersistentCalls:
       m_Calls:
@@ -5933,7 +5909,7 @@ MonoBehaviour:
   _map: {fileID: 0}
   maxSpeed: 3.5
   maxForce: 10
-  stoppingDistance: 0.1
+  stoppingDistance: 0.25
   slowingDistance: 1
   lookAheadDistance: 0.41
   avoidRadius: 0.39
@@ -11689,7 +11665,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8077155009431727906}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.625, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11910,5 +11886,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atkAnimationName: atk
+  jumpAtkAnimationName: atk_move
   idleAnimationName: idle
   runAnimationName: run

@@ -25,6 +25,8 @@ namespace MoreMountains.TopDownEngine
 		protected Vector2 _direction;
 		protected CharacterMovement _characterMovement;
 		protected int _numberOfJumps = 0;
+
+		public float speed;
 		public UnityEvent onMove;
 
 		/// <summary>
@@ -82,6 +84,12 @@ namespace MoreMountains.TopDownEngine
 				_direction = (_brain.Target.position - this.transform.position).normalized;
 				_characterMovement.SetMovement(_direction);
 			}
+		}
+
+		public override void OnEnterState()
+		{
+			base.OnEnterState();
+			_brain.SetAgentSpeed(speed);
 		}
 
 		/// <summary>

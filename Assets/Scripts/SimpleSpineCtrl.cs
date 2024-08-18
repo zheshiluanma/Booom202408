@@ -7,6 +7,7 @@ public class SimpleSpineCtrl : MonoBehaviour
 {
     private SkeletonAnimation _skeletonAnimation;
     public string atkAnimationName = "atk";
+    public string jumpAtkAnimationName = "atk_move";
     public string idleAnimationName = "idle";
     public string runAnimationName = "run";
     // Start is called before the first frame update
@@ -28,6 +29,11 @@ public class SimpleSpineCtrl : MonoBehaviour
     public void Attack()
     {
         PlayAnimation(atkAnimationName);
+    }
+    
+    public void JumpAttack()
+    {
+        PlayAnimation(jumpAtkAnimationName);
     }
     
     public void PlayAnimation(string animationName)

@@ -318,5 +318,10 @@ namespace MoreMountains.Tools
 		{
 			polyNavAgent.SetDestination(Target.position);
 		}
+		
+		public void SetAgentSpeed(float speed)
+		{
+			polyNavAgent.maxSpeed = speed;
+		}
 	}
 }
