@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Manager;
 using UnityEngine;
 
 public class BackpackItem : MonoBehaviour
@@ -14,6 +15,7 @@ public class BackpackItem : MonoBehaviour
     private int _OBcount;
     private Camera _mainCamera;
     public ItemType itemType;
+    public GameObject item;
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -36,9 +38,9 @@ public class BackpackItem : MonoBehaviour
                 break;
             case ItemType.地刺:
                 break;
-            default:
-                throw new ArgumentOutOfRangeException();
         }
+        var obj = Instantiate(item,transform.position,Quaternion.identity);
+        obj.SetActive(true);
     }
 
     private void OnDisable()
@@ -48,7 +50,9 @@ public class BackpackItem : MonoBehaviour
 
     private void Update()
     {
-        spriteRenderer.sprite = (_OBcount<=0&&count>0) ? itemSprite : cannotuse;
+        canuse = _OBcount <= 0 && count > 0;
+        spriteRenderer.sprite =canuse ? itemSprite : cannotuse;
+        DataMgr.Instance.noisePos =DataMgr.Instance.player.transform.position;
         if(Input.GetMouseButtonDown(0)&&canuse)
             OnUse();
         var mousePosition =_mainCamera.ScreenToWorldPoint(Input.mousePosition);

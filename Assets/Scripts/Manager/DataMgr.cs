@@ -63,6 +63,7 @@ namespace Manager
         public HeroActiveDataSet HeroActiveDataSet;
         public float loadProgress;
         public Vector3 noisePos;
+        public float hearDistance = 3f;
 
         public GameObject player
         {
@@ -89,6 +90,8 @@ namespace Manager
         public List<string> sceneList=new List<string>(){"Level1","Level2","Level3","Level4"};
         public TextAsset[] interactionJsonAssets;
         public PolyNavMap polyNavMap;
+        
+        public List<BackpackItem> backpackItems=new List<BackpackItem>();
 
         public void Awake()
         {
@@ -139,11 +142,17 @@ namespace Manager
             return HeroActiveDataSet[nowLevel+1].Atk;
         }
         
+        public int GetBoomDamage()
+        {
+            return (int)(HeroActiveDataSet[nowLevel+1].Atk*(1f+playerExtraAttribute.ProjectileDamage));
+        }
+        
         public void ShowUpLevelPanel()
         {
             //展示选卡面板
             TipsMgr.Instance.ShowUpLevelPanel();
             TaskMgr.Instance.ClearTask();
+            DataMgr.Instance.hearDistance = 2;
         }
 
         public void UpLevel(PropAttribute propAttribute)

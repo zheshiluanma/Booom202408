@@ -9,7 +9,7 @@ namespace AI
         public float hearDistance = 2f;
         public override bool Decide()
         {
-            return hearDistance >= CheckDistance();
+            return DataMgr.Instance.hearDistance >= CheckDistance();
         }
 
         private float CheckDistance()

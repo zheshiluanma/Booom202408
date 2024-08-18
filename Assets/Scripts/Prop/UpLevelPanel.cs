@@ -14,11 +14,6 @@ namespace Prop
 
         [SerializeField]private GameObject[] showCards;
 
-        private void Awake()
-        {
-            Hide();
-        }
-
         public void Open()
         {
             Show();
@@ -31,6 +26,7 @@ namespace Prop
         
             int arrayLength = propPrefabs.Length;
             HashSet<int> usedIndices = new HashSet<int>();
+            showCards = new GameObject[showCount];
 
             for (int i = 0; i < showCount; i++)
             {

@@ -99,6 +99,7 @@ namespace Manager
         {
             Debug.Log("Monster Tide Start");
             DataMgr.Instance.remainMonster = totalMonster;
+            DataMgr.Instance.hearDistance = 99999;
         }
 
         public void AddTask()

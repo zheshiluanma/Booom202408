@@ -29,6 +29,8 @@ namespace Manager
 
         public BackpackItem[] backpacks;
         
+        private bool _useItem;
+        
         private void Start()
         {
             DataMgr.Instance.player = transform.parent.parent.gameObject;
@@ -103,7 +105,7 @@ namespace Manager
             // rb.velocity=(movement * movementSpeed );
 
             // Handle shooting
-            if (Input.GetMouseButtonDown(0) && _canShot)
+            if (Input.GetMouseButtonDown(0) && _canShot&&!_useItem)
             {
                 _canShot = false;
                 ShotAnim();
@@ -115,6 +117,46 @@ namespace Manager
             {
                 DataMgr.Instance.noisePos = transform.position;
             }
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                foreach (var backpackItem in DataMgr.Instance.backpackItems)
+                {
+                    backpackItem.gameObject.SetActive(false);
+                }
+                _useItem = false;
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                foreach (var backpackItem in DataMgr.Instance.backpackItems)
+                {
+                    backpackItem.gameObject.SetActive(false);
+                }
+                DataMgr.Instance.backpackItems[0].OnSelect();
+                _useItem = true;
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                foreach (var backpackItem in DataMgr.Instance.backpackItems)
+                {
+                    backpackItem.gameObject.SetActive(false);
+                }
+                DataMgr.Instance.backpackItems[1].OnSelect();
+                _useItem = true;
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                foreach (var backpackItem in DataMgr.Instance.backpackItems)
+                {
+                    backpackItem.gameObject.SetActive(false);
+                }
+                DataMgr.Instance.backpackItems[2].OnSelect();
+                _useItem = true;
+            }
+            
         }
 
         void ShotAnim()
@@ -133,6 +175,7 @@ namespace Manager
             bullet.transform.position = gunTrs.position;
 
             bullet.transform.rotation = Quaternion.Euler(gunTrs.eulerAngles.x, gunTrs.eulerAngles.y, gunTrs.eulerAngles.z+180);
+            DataMgr.Instance.noisePos = transform.position;
         }
         
     }
