@@ -78,6 +78,11 @@ namespace MoreMountains.TopDownEngine
 			TopDownEngineEvent.Trigger(TopDownEngineEventTypes.UnPause, null);
 			LoadScene(SceneManager.GetActiveScene().name);
 		}
+
+		public void ExitLevel()
+		{
+			Application.Quit();
+		}
 		
 	}
 }

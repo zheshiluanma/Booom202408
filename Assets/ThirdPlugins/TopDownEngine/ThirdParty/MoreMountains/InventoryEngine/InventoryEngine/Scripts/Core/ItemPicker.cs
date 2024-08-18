@@ -43,6 +43,7 @@ namespace MoreMountains.InventoryEngine
 		protected virtual void Start()
 		{
 			Initialization ();
+			gameObject.SetActive(false);
 		}
 
 		/// <summary>

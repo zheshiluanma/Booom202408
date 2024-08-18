@@ -84,6 +84,7 @@ public class InkDialogueManager : MonoBehaviour
     {
         story = new Story(inkJSONAsset.text);
         if (OnCreateStory != null) OnCreateStory(story);
+        dialogueBox.gameObject.SetActive(true);
         ContinueStory();
     }
 

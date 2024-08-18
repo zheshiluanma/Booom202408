@@ -14,10 +14,7 @@ namespace Prop
 
         [SerializeField]private GameObject[] showCards;
 
-        private void Awake()
-        {
-            Hide();
-        }
+        public Transform trs;
 
         public void Open()
         {
@@ -31,6 +28,7 @@ namespace Prop
         
             int arrayLength = propPrefabs.Length;
             HashSet<int> usedIndices = new HashSet<int>();
+            showCards = new GameObject[showCount];
 
             for (int i = 0; i < showCount; i++)
             {
@@ -46,7 +44,7 @@ namespace Prop
 
             foreach (var go in showCards)
             {
-                Instantiate(go,transform).GetComponent<Button>().onClick.AddListener(()=>OnPropCardClick(go.GetComponent<Prop>().propAttribute));
+                Instantiate(go,trs).GetComponent<Button>().onClick.AddListener(()=>OnPropCardClick(go.GetComponent<Prop>().propAttribute));
             }
         }
 

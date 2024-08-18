@@ -840,6 +840,7 @@ namespace MoreMountains.InventoryEngine
 		/// <param name="slot">Slot.</param>
 		public virtual void DropItem(InventoryItem item, int index, InventorySlot slot = null)
 		{
+			return;
 			if (InventoryItem.IsNull(item))
 			{
 				MMInventoryEvent.Trigger(MMInventoryEventType.Error, slot, this.name, null, 0, index, PlayerID);
