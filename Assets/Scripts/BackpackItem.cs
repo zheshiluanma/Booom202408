@@ -27,6 +27,7 @@ public class BackpackItem : MonoBehaviour
     
     public void OnUse()
     {
+        count--;
         switch (itemType)
         {
             case ItemType.手榴弹:
