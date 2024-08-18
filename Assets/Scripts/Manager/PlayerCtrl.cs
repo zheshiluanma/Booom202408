@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using MoreMountains.TopDownEngine;
 using Spine;
 using Spine.Unity;
 using UnityEngine;
@@ -38,6 +39,7 @@ namespace Manager
             _mainCamera = Camera.main;
             var mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
             this.ikConstraint.transform.position = mousePosition;
+       
         }
 
         private IEnumerator CoolDownShot()
