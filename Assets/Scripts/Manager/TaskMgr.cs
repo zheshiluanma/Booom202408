@@ -145,6 +145,10 @@ namespace Manager
         
         public void CompleteTask(string key,int completeProgress=1)
         {
+            if (!nowTasks.ContainsKey(key))
+            {
+               AddTask(key,2);
+            }
             nowTasks[key].UpdateProgress(completeProgress);
             if (completeProgress >= nowTasks[key].taskData.maxProgress)
             {

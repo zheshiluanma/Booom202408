@@ -233,6 +233,8 @@ namespace MoreMountains.Tools
 			{
 				return;
 			}
+			if(!Target.gameObject.activeInHierarchy)
+				gameObject.SetActive(false);
 			if (UpdateMode == UpdateModes.Update)
 			{
 				FollowTargetRotation();

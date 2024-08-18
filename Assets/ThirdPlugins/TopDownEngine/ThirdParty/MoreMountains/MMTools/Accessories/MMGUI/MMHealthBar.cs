@@ -235,6 +235,8 @@ namespace MoreMountains.Tools
 		/// </summary>
 		public virtual void Initialization()
 		{
+			if(!gameObject.activeSelf)
+				return;
 			_finalHideStarted = false;
 
 			if (_progressBar != null)

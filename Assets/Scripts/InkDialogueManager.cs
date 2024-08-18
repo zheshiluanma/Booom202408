@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 
 using System.IO;
+using Manager;
 
 public class InkDialogueManager : MonoBehaviour
 {
@@ -165,7 +166,6 @@ public class InkDialogueManager : MonoBehaviour
             }
             if (tagSplit[0] == "CHAR")
             {
-               
                 characterName= tagSplit[1];
                 Debug.Log(tagSplit[2]);
                 for (int j = 0;j<allExpressions.Count;j++)
@@ -202,6 +202,10 @@ public class InkDialogueManager : MonoBehaviour
             else if(tagSplit[0]=="ITEM")
             {
                 
+            }
+            else if(tagSplit[0]=="updatetask")
+            {
+                TaskMgr.Instance.AddTask("FindHuman",2);
             }
         }
         //改变角色立绘
