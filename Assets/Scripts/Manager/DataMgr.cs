@@ -8,6 +8,7 @@ using SimpleJSON;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 namespace Manager
 {
@@ -132,6 +133,9 @@ namespace Manager
         
         public int GetShotDamage()
         {
+            var i = Random.Range(0, 100);
+            if(i<=20+playerExtraAttribute.CritRate*100)
+                return (int) (HeroActiveDataSet[nowLevel+1].Atk *(1.5f+ playerExtraAttribute.CritDamage));
             return HeroActiveDataSet[nowLevel+1].Atk;
         }
         

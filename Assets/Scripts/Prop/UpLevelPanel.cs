@@ -37,7 +37,7 @@ namespace Prop
                 int randomIndex;
                 do
                 {
-                    randomIndex = random.Next(arrayLength);
+                    randomIndex = random.Next(arrayLength-1);
                 } while (usedIndices.Contains(randomIndex));
 
                 showCards[i] = propPrefabs[randomIndex];

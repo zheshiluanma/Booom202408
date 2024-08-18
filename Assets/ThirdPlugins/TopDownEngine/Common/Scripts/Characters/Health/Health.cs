@@ -436,7 +436,11 @@ namespace MoreMountains.TopDownEngine
 
             Debug.Log($"ddddd{damage}");
             damage = ComputeDamageOutput(damage, typedDamages, true);
-			
+            damage -= Dfs;
+            if (damage <= 0)
+            {
+                return;
+            }
             // we decrease the character's health by the damage
             float previousHealth = CurrentHealth;
             if (MasterHealth != null)
