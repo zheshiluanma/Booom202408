@@ -10,6 +10,11 @@ public class SimpleSpineCtrl : MonoBehaviour
     public string jumpAtkAnimationName = "atk_move";
     public string idleAnimationName = "idle";
     public string runAnimationName = "run";
+    
+    public string jumpStart="atk1_start";
+    public string jumpEnd="atk1_end";
+    public string atk2="atk2";
+    public string atk3="atk4"; 
     // Start is called before the first frame update
     void Start()
     {

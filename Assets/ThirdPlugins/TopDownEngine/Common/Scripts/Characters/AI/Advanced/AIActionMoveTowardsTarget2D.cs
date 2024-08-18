@@ -27,6 +27,7 @@ namespace MoreMountains.TopDownEngine
 		protected int _numberOfJumps = 0;
 
 		public float speed;
+		public Transform targetTrans;
 		public UnityEvent onMove;
 
 		/// <summary>
@@ -52,11 +53,17 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected virtual void Move()
 		{
+			if (targetTrans != null)
+			{
+				transform.position=Vector3.Lerp(transform.position,targetTrans.position,Time.deltaTime*speed);
+				return;
+			}
 			if (_brain.Target == null)
 			{
 				return;
 			}
 			onMove?.Invoke();
+			
 			_brain.SetTargetDestination();
 			if (UseMinimumXDistance)
 			{
@@ -88,8 +95,16 @@ namespace MoreMountains.TopDownEngine
 
 		public override void OnEnterState()
 		{
+			if (targetTrans!=null)
+			{
+				MapCtrl.Instance.AbleNavMap(false);
+				_brain.AbleAgent(false);
+			}
+			else
+			{
+				_brain.SetAgentSpeed(speed);
+			}
 			base.OnEnterState();
-			_brain.SetAgentSpeed(speed);
 		}
 
 		/// <summary>
@@ -98,7 +113,11 @@ namespace MoreMountains.TopDownEngine
 		public override void OnExitState()
 		{
 			base.OnExitState();
-
+			if (targetTrans!=null)
+			{
+				MapCtrl.Instance.AbleNavMap(true);
+				_brain.AbleAgent(true);
+			}
 			_characterMovement?.SetHorizontalMovement(0f);
 			_characterMovement?.SetVerticalMovement(0f);
 		}

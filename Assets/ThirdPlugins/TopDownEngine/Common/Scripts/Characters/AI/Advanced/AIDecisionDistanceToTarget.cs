@@ -16,6 +16,7 @@ namespace MoreMountains.TopDownEngine
 		/// the comparison mode
 		[Tooltip("the comparison mode")]
 		public ComparisonModes ComparisonMode = ComparisonModes.GreaterThan;
+		public Transform targetTrans;
 		/// the distance to compare with
 		[Tooltip("the distance to compare with")]
 		public float Distance;
@@ -35,6 +36,31 @@ namespace MoreMountains.TopDownEngine
 		/// <returns></returns>
 		protected virtual bool EvaluateDistance()
 		{
+			if (targetTrans != null) 
+			{
+				float customDistance = Vector3.Distance(this.transform.position, targetTrans.position);
+				if (ComparisonMode == ComparisonModes.StrictlyLowerThan)
+				{
+					return (customDistance < Distance);
+				}
+				if (ComparisonMode == ComparisonModes.LowerThan)
+				{
+					return (customDistance <= Distance);
+				}
+				if (ComparisonMode == ComparisonModes.Equals)
+				{
+					return (customDistance == Distance);
+				}
+				if (ComparisonMode == ComparisonModes.GreaterThan)
+				{
+					return (customDistance >= Distance);
+				}
+				if (ComparisonMode == ComparisonModes.StrictlyGreaterThan)
+				{
+					return (customDistance > Distance);
+				}
+			}
+			
 			if (_brain.Target == null)
 			{
 				return false;

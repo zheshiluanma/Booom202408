@@ -37,7 +37,7 @@ namespace MoreMountains.Tools
 		public bool ResetBrainOnStart = true;
 		public bool ResetBrainOnEnable = false;
 
-		private PolyNavAgent polyNavAgent;
+		public PolyNavAgent polyNavAgent;
 		[Header("Frequencies")]
 		/// the frequency (in seconds) at which to perform actions (lower values : higher frequency, high values : lower frequency but better performance)
 		public float ActionsFrequency = 0f;
@@ -317,6 +317,16 @@ namespace MoreMountains.Tools
 		public void SetTargetDestination()
 		{
 			polyNavAgent.SetDestination(Target.position);
+		}
+		
+		public void AbleAgent(bool enable)
+		{
+			polyNavAgent.enabled = enable;
+		}
+		
+		public void SetDestination(Vector3 destination)
+		{
+			polyNavAgent.SetDestination(destination);
 		}
 		
 		public void SetAgentSpeed(float speed)

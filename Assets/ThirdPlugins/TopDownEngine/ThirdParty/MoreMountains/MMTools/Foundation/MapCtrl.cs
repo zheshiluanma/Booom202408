@@ -17,4 +17,9 @@ using UnityEngine;
                 return _instance;
             }
         }
+
+        public void AbleNavMap(bool able)
+        {
+            polyNavMap.enabled = able;
+        }
     }
