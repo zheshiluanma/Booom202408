@@ -21589,11 +21589,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ink Dialogue Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 1045625826201929423, guid: 8ab6dc240581d2643b8252f45069c69c,
-        type: 3}
-      propertyPath: inkJSONAsset
-      value: 
-      objectReference: {fileID: 4900000, guid: a5cba704232e8d64a94c628c1b67519a, type: 3}
     - target: {fileID: 1227774577109252641, guid: 8ab6dc240581d2643b8252f45069c69c,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -21735,6 +21730,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 8357608208143601709, guid: 8ab6dc240581d2643b8252f45069c69c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -980826293, guid: f247b5fe1d5e3f54c91a0b150049f930,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

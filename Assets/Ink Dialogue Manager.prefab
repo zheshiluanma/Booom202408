@@ -313,8 +313,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8fc41da3ab02444b7cf22fa0e3dcd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSONAsset: {fileID: 0}
-  allExpressions: []
+  inkJSONAsset: {fileID: 4900000, guid: a5cba704232e8d64a94c628c1b67519a, type: 3}
+  allExpressions:
+  - characterName: NO.9734
+    expressions:
+    - expression: Normal
+      img: {fileID: -980826293, guid: f247b5fe1d5e3f54c91a0b150049f930, type: 3}
+  - characterName: NOVACO CORTEX
+    expressions:
+    - expression: Normal
+      img: {fileID: 447090865, guid: f247b5fe1d5e3f54c91a0b150049f930, type: 3}
   dialogueBox: {fileID: 0}
   dialogueBoxText: {fileID: 0}
   characterNameBox: {fileID: 0}
